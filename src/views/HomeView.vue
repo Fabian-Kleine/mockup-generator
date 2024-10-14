@@ -21,15 +21,15 @@
                 <div class="bg-surface-0 dark:bg-surface-900 shadow p-4 rounded-border">
                     <div class="flex justify-between mb-4">
                         <div>
-                            <span class="block text-surface-500 dark:text-surface-300 font-medium mb-4">Revenue</span>
-                            <div class="text-surface-900 dark:text-surface-0 font-medium !text-xl">$2.100</div>
+                            <span class="block text-surface-500 dark:text-surface-300 font-medium mb-4">YouTube</span>
+                            <div class="text-surface-900 dark:text-surface-0 font-medium !text-xl">
+                                <Button as="router-link" label="Edit Mockup" to="/youtube" />
+                            </div>
                         </div>
                         <div class="flex items-center justify-center bg-red-100 dark:bg-red-400/30 rounded-border w-10 h-10">
                             <i class="pi pi-youtube text-red-500 dark:text-red-200 !text-xl" />
                         </div>
                     </div>
-                    <span class="text-green-500 font-medium">%52+ </span>
-                    <span class="text-surface-500 dark:text-surface-300">since last week</span>
                 </div>
             </div>
             <div class="col-span-12 md:col-span-6 lg:col-span-3">
