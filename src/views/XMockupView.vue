@@ -32,7 +32,9 @@ async function download() {
                     <div class="w-full">
                         <div class="flex justify-between items-center">
                             <div class="flex justify-start items-center gap-2">
-                                <img :src="proiflePicture" alt="Profile Picture" class="w-12 h-12 rounded-full">
+                                <div class="w-12 h-12 rounded-full overflow-hidden">
+                                    <img :src="proiflePicture" alt="Profile Picture" class="w-full h-full object-cover">
+                                </div>
                                 <div>
                                     <span class="flex items-center text-black font-medium">
                                         <span class="mr-1 focus:outline-none" contenteditable>Elon Musk</span>
