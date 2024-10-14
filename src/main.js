@@ -1,5 +1,21 @@
 import { createApp } from 'vue'
+import PrimeVue from "primevue/config"
+import Button from "primevue/button"
+import Aura from "@primevue/themes/aura"
 import './style.css'
 import App from './App.vue'
 
-createApp(App).mount('#app')
+const app = createApp(App);
+
+app.component('Button', Button);
+
+app.use(PrimeVue, {
+    theme: {
+        preset: Aura,
+        options: {
+            darkModeSelector: '.dark',
+        }
+    }
+});
+
+app.mount('#app')
