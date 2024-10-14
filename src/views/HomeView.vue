@@ -1,12 +1,12 @@
 <template>
-      <div class="px-6 py-8 md:px-12 lg:px-20">
+      <div class="px-6 py-8 md:px-12 lg:px-20 w-screen">
         <div class="grid grid-cols-12 gap-4">
             <div class="col-span-12 md:col-span-6 lg:col-span-3">
                 <div class="bg-surface-0 dark:bg-surface-900 shadow p-4 rounded-border">
                     <div class="flex justify-between mb-4">
                         <div>
                             <span class="block text-surface-500 dark:text-surface-300 font-medium mb-4">X (Twitter)</span>
-                            <div class="text-surface-900 dark:text-surface-0 font-medium !text-xl"><Button as="router-link" label="Router" to="/test" /></div>
+                            <div class="text-surface-900 dark:text-surface-0 font-medium !text-xl"><Button as="router-link" label="Router" to="/x" /></div>
                         </div>
                         <div class="flex items-center justify-center bg-blue-100 dark:bg-blue-500/30 rounded-border w-10 h-10">
                             <i class="pi pi-twitter text-blue-500 dark:text-blue-200 !text-xl" />
