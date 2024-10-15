@@ -6,8 +6,8 @@
                     <div class="flex justify-between mb-4 h-full">
                         <div class="flex flex-col h-full">
                             <span class="block text-surface-500 dark:text-surface-300 font-medium mb-4">X (Twitter) tweet</span>
-                            <div class="text-surface-900 dark:text-surface-0 font-medium !text-xl">
-                                <img src="/x-mockup.png" alt="Mockup" class="mb-4 w-[90%]">
+                            <div class="text-surface-900 dark:text-surface-0 font-medium !text-xl flex justify-center">
+                                <img src="/x-mockup.png" alt="Mockup" class="rounded-md w-[90%]">
                             </div>
                             <Button class="mt-auto" as="router-link" label="Edit Mockup" to="/x" />
                         </div>
@@ -22,8 +22,8 @@
                     <div class="flex justify-between mb-4 h-full">
                         <div class="flex flex-col h-full">
                             <span class="block text-surface-500 dark:text-surface-300 font-medium mb-4">YouTube Video</span>
-                            <div class="text-surface-900 dark:text-surface-0 font-medium !text-xl">
-                                <img src="/youtube-mockup.png" alt="Mockup" class="mb-4 w-[90%]">
+                            <div class="text-surface-900 dark:text-surface-0 font-medium !text-xl flex justify-center">
+                                <img src="/youtube-mockup.png" alt="Mockup" class="rounded-md w-[90%]">
                             </div>
                             <Button class="mt-auto" as="router-link" label="Edit Mockup" to="/youtube" />
                         </div>
@@ -38,8 +38,8 @@
                     <div class="flex justify-between mb-4 h-full">
                         <div class="flex flex-col h-full">
                             <span class="block text-surface-500 dark:text-surface-300 font-medium mb-4">YouTube Comment</span>
-                            <div class="text-surface-900 dark:text-surface-0 font-medium !text-xl">
-                                <img src="/youtube-comment-mockup.png" alt="Mockup">
+                            <div class="text-surface-900 dark:text-surface-0 font-medium !text-xl flex justify-center">
+                                <img src="/youtube-comment-mockup.png" alt="Mockup" class="rounded-md">
                             </div>
                             <Button class="mt-auto" as="router-link" label="Edit Mockup" to="/youtube-comment" />
                         </div>
@@ -54,8 +54,8 @@
                     <div class="flex justify-between mb-4 h-full">
                         <div class="flex flex-col h-full">
                             <span class="block text-surface-500 dark:text-surface-300 font-medium mb-4">Whatsapp Chat</span>
-                            <div class="text-surface-900 dark:text-surface-0 font-medium !text-xl">
-                                <img src="/whatsapp-mockup.png" alt="Mockup">
+                            <div class="text-surface-900 dark:text-surface-0 font-medium !text-xl flex justify-center">
+                                <img src="/whatsapp-mockup.png" alt="Mockup" class="rounded-md w-[90%]">
                             </div>
                             <Button class="mt-auto" as="router-link" label="Edit Mockup" to="/whatsapp" />
                         </div>
