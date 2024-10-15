@@ -55,7 +55,7 @@
                         <div class="flex flex-col h-full">
                             <span class="block text-surface-500 dark:text-surface-300 font-medium mb-4">Whatsapp Chat</span>
                             <div class="text-surface-900 dark:text-surface-0 font-medium !text-xl">
-                                <img src="/youtube-comment-mockup.png" alt="Mockup">
+                                <img src="/whatsapp-mockup.png" alt="Mockup">
                             </div>
                             <Button class="mt-auto" as="router-link" label="Edit Mockup" to="/whatsapp" />
                         </div>
