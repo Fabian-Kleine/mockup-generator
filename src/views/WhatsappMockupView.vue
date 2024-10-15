@@ -90,7 +90,7 @@ function addMessage(action) {
         <div :class="['relative col-span-3 flex justify-center items-center min-h-[800px]', background == 'white' ? 'bg-white' : background == 'green' ? 'bg-[#25D366]' : '']"
             :id="background == 'green' || background == 'white' ? 'capture' : ''">
             <div
-                :class="['relative mx-auto rounded-[2.5rem]', , background == 'green' || background == 'white' ? 'shadow-2xl' : '', !hidePhone ? 'border-neutral-800 bg-neutral-800 border-[14px] h-[600px] w-[300px]' : '']">
+                :class="['relative rounded-[2.5rem]', , background == 'green' || background == 'white' ? 'shadow-2xl' : '', !hidePhone ? 'border-neutral-800 bg-neutral-800 border-[14px] h-[600px] w-[300px]' : '']" :id="background != 'green' && background != 'white' ? 'capture' : ''">
                 <div class="h-[32px] w-[3px] bg-neutral-800 absolute -start-[17px] top-[72px] rounded-s-lg"
                     v-if="!hidePhone">
                 </div>
