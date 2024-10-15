@@ -17,3 +17,11 @@
   -moz-osx-font-smoothing: grayscale;
   
 }
+
+.p-fileupload {
+  flex: 1 1 0%;
+}
+
+.p-fileupload span[files] {
+  display: none;
+}
