@@ -2,6 +2,7 @@
 import Dialog from 'primevue/dialog';
 import { ref } from 'vue';
 import FileUpload from 'primevue/fileupload';
+import { RouterLink } from 'vue-router';
 import DomToImage from 'dom-to-image';
 
 const recommendedVideosLength = Array.from({ length: 8 });
@@ -32,6 +33,7 @@ async function download() {
         <nav class="w-full flex justify-between gap-2 px-5 py-3">
             <div class="w-36 flex items-center gap-2 md:gap-6">
                 <i class="pi pi-bars !text-xl"></i>
+                <RouterLink to="/">
                 <svg class="fill-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 20" focusable="false"
                     aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
 
@@ -66,6 +68,7 @@ async function download() {
                         </g>
                     </g>
                 </svg>
+            </RouterLink>
             </div>
             <div class="flex justify-center gap-4 flex-[0_1_723px]">
                 <div class="flex lg:flex-1 h-[42px]">
