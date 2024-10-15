@@ -4,7 +4,7 @@ import DatePicker from 'primevue/datepicker';
 import IftaLabel from 'primevue/iftalabel';
 import FileUpload from 'primevue/fileupload';
 import Select from 'primevue/select';
-import DomToImage from 'dom-to-image';
+import downloadCapture from '../lib/utils';
 
 const verified = ref(false);
 const background = ref("blue");
@@ -29,15 +29,6 @@ const backgroundOptions = [
 
 function onSelect(e) {
     proiflePicture.value = e.files[0].objectURL;
-}
-
-async function download() {
-    const dataUrl = await DomToImage.toPng(document.querySelector('#capture'));
-
-    const link = document.createElement("a");
-    link.download = "x-mockup.png";
-    link.href = dataUrl;
-    link.click();
 }
 </script>
 
@@ -71,7 +62,7 @@ async function download() {
             <FileUpload mode="basic" accept="image/*" @select="onSelect" chooseLabel="Upload Profile Picture" />
             <div class="flex gap-2 mt-4">
                 <Button as="router-link" class="flex-1" label="Cancel" severity="secondary" to="/" />
-                <Button class="flex-1" label="Download" severity="success" @click="download" />
+                <Button class="flex-1" label="Download" severity="success" @click="downloadCapture('x-mockup.png')" />
             </div>
         </div>
         <div

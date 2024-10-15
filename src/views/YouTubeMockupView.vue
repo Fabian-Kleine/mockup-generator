@@ -3,7 +3,7 @@ import Drawer from 'primevue/drawer';
 import { ref } from 'vue';
 import FileUpload from 'primevue/fileupload';
 import { RouterLink } from 'vue-router';
-import DomToImage from 'dom-to-image';
+import downloadCapture from '../lib/utils';
 
 const recommendedVideosLength = Array.from({ length: 8 });
 const editDialogVisible = ref(true);
@@ -16,15 +16,6 @@ function onSelect(e) {
 
 function onThumbnailSelect(e) {
     thumbnail.value = e.files[0].objectURL;
-}
-
-async function download() {
-    const dataUrl = await DomToImage.toPng(document.querySelector('#capture'));
-
-    const link = document.createElement("a");
-    link.download = "youtube-mockup.png";
-    link.href = dataUrl;
-    link.click();
 }
 </script>
 
@@ -185,7 +176,7 @@ async function download() {
             </div>
             <div class="flex justify-end gap-2 mt-4">
                 <Button as="router-link" label="Cancel" severity="secondary" to="/" />
-                <Button label="Download" @click="download" />
+                <Button label="Download" @click="downloadCapture('youtube-mockup.png')" />
             </div>
         </div>
     </Drawer>
