@@ -39,7 +39,7 @@
                         <div class="flex flex-col h-full">
                             <span class="block text-surface-500 dark:text-surface-300 font-medium mb-4">YouTube Comment</span>
                             <div class="text-surface-900 dark:text-surface-0 font-medium !text-xl">
-                                <img src="/youtube-mockup.png" alt="Mockup" class="mb-4 w-[90%]">
+                                <img src="/youtube-comment-mockup.png" alt="Mockup">
                             </div>
                             <Button class="mt-auto" as="router-link" label="Edit Mockup" to="/youtube-comment" />
                         </div>
