@@ -62,7 +62,7 @@ function onSelect(e) {
             <FileUpload mode="basic" accept="image/*" @select="onSelect" chooseLabel="Upload Profile Picture" />
             <div class="flex gap-2 mt-4">
                 <Button as="router-link" class="flex-1" label="Cancel" severity="secondary" to="/" />
-                <Button class="flex-1" label="Download" severity="success" @click="downloadCapture('x-mockup.png')" />
+                <Button class="flex-1" label="Download" @click="downloadCapture('x-mockup.png')" />
             </div>
         </div>
         <div

@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import { createMemoryHistory, createRouter } from 'vue-router'
 import PrimeVue from "primevue/config"
+import { definePreset } from '@primevue/themes'
 import Button from "primevue/button"
 import Checkbox from 'primevue/checkbox'
 import Aura from "@primevue/themes/aura"
@@ -31,9 +32,27 @@ const app = createApp(App);
 app.component('Button', Button);
 app.component('Checkbox', Checkbox);
 
+const MyPreset = definePreset(Aura, {
+    semantic: {
+        primary: {
+            50: '{sky.50}',
+            100: '{sky.100}',
+            200: '{sky.200}',
+            300: '{sky.300}',
+            400: '{sky.400}',
+            500: '{sky.500}',
+            600: '{sky.600}',
+            700: '{sky.700}',
+            800: '{sky.800}',
+            900: '{sky.900}',
+            950: '{sky.950}'
+        }
+    }
+})
+
 app.use(PrimeVue, {
     theme: {
-        preset: Aura,
+        preset: MyPreset,
         options: {
             darkModeSelector: '.dark',
         }
