@@ -13,6 +13,8 @@ const editDialogVisible = ref(true);
 const proiflePicture = ref("/x_placeholder.png");
 const thumbnail = ref("");
 const redSubscribeButton = ref(false);
+const youtubeLogo = ref(true);
+const hideNavbar = ref(false);
 const description = ref(false);
 const date = ref("Wed Oct 09 2024 21:43:52 GMT+0200 (Mitteleuropäische Sommerzeit)")
 
@@ -27,10 +29,10 @@ function onThumbnailSelect(e) {
 
 <template>
     <div class="pb-4" id="capture">
-        <nav class="w-full flex justify-between gap-2 px-5 py-3">
+        <nav class="w-full flex justify-between gap-2 px-5 py-3" v-if="!hideNavbar">
             <div class="w-36 flex items-center gap-2 md:gap-6">
                 <i class="pi pi-bars !text-xl cursor-pointer" @click="editDialogVisible = true"></i>
-                <RouterLink to="/">
+                <RouterLink v-if="youtubeLogo" to="/">
                     <svg class="fill-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 20" focusable="false"
                         aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
 
@@ -189,6 +191,14 @@ function onThumbnailSelect(e) {
             <div class="flex items-center mt-4">
                 <ToggleSwitch v-model="redSubscribeButton" inputId="redSubscribeButton" />
                 <label for="redSubscribeButton" class="ml-2"> Red Subscribe Button </label>
+            </div>
+            <div class="flex items-center mt-4">
+                <ToggleSwitch v-model="youtubeLogo" inputId="youtubeLogo" />
+                <label for="youtubeLogo" class="ml-2"> Show Youtube Logo </label>
+            </div>
+            <div class="flex items-center mt-4">
+                <ToggleSwitch v-model="hideNavbar" inputId="hideNavbar" />
+                <label for="hideNavbar" class="ml-2"> Hide Navbar </label>
             </div>
             <div class="flex items-center mt-4">
                 <ToggleSwitch v-model="description" inputId="description" />
