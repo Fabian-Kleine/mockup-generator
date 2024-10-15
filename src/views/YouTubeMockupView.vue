@@ -2,6 +2,7 @@
 import Drawer from 'primevue/drawer';
 import { ref } from 'vue';
 import FileUpload from 'primevue/fileupload';
+import ToggleSwitch from 'primevue/toggleswitch';
 import { RouterLink } from 'vue-router';
 import downloadCapture from '../lib/utils';
 
@@ -9,6 +10,7 @@ const recommendedVideosLength = Array.from({ length: 8 });
 const editDialogVisible = ref(true);
 const proiflePicture = ref("/x_placeholder.png");
 const thumbnail = ref("");
+const redSubscribeButton = ref(false);
 
 function onSelect(e) {
     proiflePicture.value = e.files[0].objectURL;
@@ -99,7 +101,7 @@ function onThumbnailSelect(e) {
                             <span class="block my-0 text-xs text-neutral-400"><span class=" focus:outline-none"
                                     contenteditable>2170</span> Subscribers</span>
                         </div>
-                        <button class="bg-white rounded-full ml-2 h-full px-5 text-black font-medium">Subscribe</button>
+                        <button :class="['rounded-full ml-2 h-full px-5 font-medium', redSubscribeButton ? 'bg-[#FF0000] text-white' : 'bg-white text-black']">Subscribe</button>
                     </div>
                     <div class="flex items-center gap-2 h-full">
                         <div class="flex justify-center items-center gap-2 bg-neutral-700 px-4 h-full rounded-full">
@@ -173,6 +175,10 @@ function onThumbnailSelect(e) {
                     @select="onThumbnailSelect" chooseLabel="Upload Video Thumbnail" />
                 <Button class="flex-1" v-if="thumbnail" label="Remove Thumbnail" severity="danger"
                     @click="thumbnail = ''" />
+            </div>
+            <div class="flex items-center mt-4">
+                <ToggleSwitch v-model="redSubscribeButton" inputId="redSubscribeButton" />
+                <label for="redSubscribeButton" class="ml-2"> Red Subscribe Button </label>
             </div>
             <div class="flex justify-end gap-2 mt-4">
                 <Button as="router-link" label="Cancel" severity="secondary" to="/" />
