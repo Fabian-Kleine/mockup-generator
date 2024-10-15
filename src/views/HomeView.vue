@@ -34,6 +34,22 @@
                 </div>
             </div>
             <div class="col-span-12 md:col-span-6 lg:col-span-3">
+                <div class="bg-surface-0 dark:bg-surface-900 shadow p-4 rounded-border h-full">
+                    <div class="flex justify-between mb-4 h-full">
+                        <div class="flex flex-col h-full">
+                            <span class="block text-surface-500 dark:text-surface-300 font-medium mb-4">YouTube Comment</span>
+                            <div class="text-surface-900 dark:text-surface-0 font-medium !text-xl">
+                                <img src="/youtube-mockup.png" alt="Mockup" class="mb-4 w-[90%]">
+                            </div>
+                            <Button class="mt-auto" as="router-link" label="Edit Mockup" to="/youtube-comment" />
+                        </div>
+                        <div class="flex items-center justify-center bg-red-100 dark:bg-red-400/30 rounded-border min-w-10 w-10 h-10">
+                            <i class="pi pi-youtube text-red-500 dark:text-red-200 !text-xl" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-span-12 md:col-span-6 lg:col-span-3">
                 <div class="bg-surface-0 dark:bg-surface-900 shadow p-4 rounded-border">
                     <div class="flex justify-between mb-4">
                         <div>
