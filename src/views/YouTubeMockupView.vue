@@ -1,5 +1,5 @@
 <script setup lang="js">
-import Dialog from 'primevue/dialog';
+import Drawer from 'primevue/drawer';
 import { ref } from 'vue';
 import FileUpload from 'primevue/fileupload';
 import { RouterLink } from 'vue-router';
@@ -32,7 +32,7 @@ async function download() {
     <div id="capture">
         <nav class="w-full flex justify-between gap-2 px-5 py-3">
             <div class="w-36 flex items-center gap-2 md:gap-6">
-                <i class="pi pi-bars !text-xl"></i>
+                <i class="pi pi-bars !text-xl cursor-pointer" @click="editDialogVisible = true"></i>
                 <RouterLink to="/">
                     <svg class="fill-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 20" focusable="false"
                         aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
@@ -152,16 +152,21 @@ async function download() {
             </div>
         </div>
     </div>
-    <Dialog v-model:visible="editDialogVisible" modal header="Edit Mockup" :style="{ width: '35rem' }">
+    <Drawer v-model:visible="editDialogVisible" header="Edit Mockup" :style="{ width: '35rem' }">
         <p class="mb-6">
             Click this button <button
                 class="inline-flex justify-center items-center gap-2 bg-neutral-700 text-white aspect-square h-[25px] rounded-full font-bold text-sm">
                 <i class="pi pi-ellipsis-h !text-sm"></i>
             </button>
-            or this button <button
+            , this button <button
                 class="inline-flex justify-center items-center gap-2 bg-neutral-700 text-white aspect-square h-[25px] rounded-full font-bold text-sm">
                 <i class="pi pi-ellipsis-v !text-sm"></i>
-            </button> to open this menu.<br>
+            </button> or this button
+            <button
+                class="inline-flex justify-center items-center gap-2 bg-neutral-700 text-white aspect-square h-[25px] rounded-full font-bold text-sm">
+                <i class="pi pi-bars !text-sm"></i>
+            </button>
+            to open this menu.<br>
             Further you can edit the Title, the amount of subscribers and the amount of likes directly in inside the
             mockup.
         </p>
@@ -183,5 +188,5 @@ async function download() {
                 <Button label="Download" @click="download" />
             </div>
         </div>
-    </Dialog>
+    </Drawer>
 </template>
