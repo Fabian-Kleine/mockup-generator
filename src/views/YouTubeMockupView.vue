@@ -3,6 +3,8 @@ import Drawer from 'primevue/drawer';
 import { ref } from 'vue';
 import FileUpload from 'primevue/fileupload';
 import ToggleSwitch from 'primevue/toggleswitch';
+import IftaLabel from 'primevue/iftalabel';
+import DatePicker from 'primevue/datepicker';
 import { RouterLink } from 'vue-router';
 import downloadCapture from '../lib/utils';
 
@@ -11,6 +13,8 @@ const editDialogVisible = ref(true);
 const proiflePicture = ref("/x_placeholder.png");
 const thumbnail = ref("");
 const redSubscribeButton = ref(false);
+const description = ref(false);
+const date = ref("Wed Oct 09 2024 21:43:52 GMT+0200 (Mitteleuropäische Sommerzeit)")
 
 function onSelect(e) {
     proiflePicture.value = e.files[0].objectURL;
@@ -22,7 +26,7 @@ function onThumbnailSelect(e) {
 </script>
 
 <template>
-    <div id="capture">
+    <div class="pb-4" id="capture">
         <nav class="w-full flex justify-between gap-2 px-5 py-3">
             <div class="w-36 flex items-center gap-2 md:gap-6">
                 <i class="pi pi-bars !text-xl cursor-pointer" @click="editDialogVisible = true"></i>
@@ -101,7 +105,8 @@ function onThumbnailSelect(e) {
                             <span class="block my-0 text-xs text-neutral-400"><span class=" focus:outline-none"
                                     contenteditable>2170</span> Subscribers</span>
                         </div>
-                        <button :class="['rounded-full ml-2 h-full px-5 font-medium', redSubscribeButton ? 'bg-[#FF0000] text-white' : 'bg-white text-black']">Subscribe</button>
+                        <button
+                            :class="['rounded-full ml-2 h-full px-5 font-medium', redSubscribeButton ? 'bg-[#FF0000] text-white' : 'bg-white text-black']">Subscribe</button>
                     </div>
                     <div class="flex items-center gap-2 h-full">
                         <div class="flex justify-center items-center gap-2 bg-neutral-700 px-4 h-full rounded-full">
@@ -130,6 +135,11 @@ function onThumbnailSelect(e) {
                             <i class="pi pi-ellipsis-h"></i>
                         </button>
                     </div>
+                </div>
+                <div class="w-full min-h-24 bg-neutral-700/50 rounded-lg mt-8 p-2" v-if="description">
+                    <span class="font-bold"><span class="focus:outline-none" contenteditable>144</span> Views {{ new
+                        Date(date).toLocaleDateString() }}</span>
+                    <p class="focus:outline-none" contenteditable>Edit description...</p>
                 </div>
             </div>
             <div class="space-y-4">
@@ -179,6 +189,17 @@ function onThumbnailSelect(e) {
             <div class="flex items-center mt-4">
                 <ToggleSwitch v-model="redSubscribeButton" inputId="redSubscribeButton" />
                 <label for="redSubscribeButton" class="ml-2"> Red Subscribe Button </label>
+            </div>
+            <div class="flex items-center mt-4">
+                <ToggleSwitch v-model="description" inputId="description" />
+                <label for="description" class="ml-2"> Show Description </label>
+            </div>
+            <div :class="['overflow-hidden transition-all', description ? 'max-h-24' : 'max-h-0']">
+                <IftaLabel class="mt-4">
+                    <DatePicker v-model="date" fluid inputId="date" showIcon iconDisplay="input" variant="filled"
+                        dateFormat="dd.mm.yy" />
+                    <label for="date">Upload Date</label>
+                </IftaLabel>
             </div>
             <div class="flex justify-end gap-2 mt-4">
                 <Button as="router-link" label="Cancel" severity="secondary" to="/" />
