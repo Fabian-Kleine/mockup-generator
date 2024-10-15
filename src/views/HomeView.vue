@@ -2,7 +2,7 @@
       <div class="px-6 py-8 md:px-12 lg:px-20 w-screen">
         <div class="grid grid-cols-12 gap-4">
             <div class="col-span-12 md:col-span-6 lg:col-span-3">
-                <div class="bg-surface-0 dark:bg-surface-900 shadow p-4 rounded-border">
+                <div class="bg-surface-0 dark:bg-surface-900 shadow p-4 rounded-border h-full">
                     <div class="flex justify-between mb-4">
                         <div>
                             <span class="block text-surface-500 dark:text-surface-300 font-medium mb-4">X (Twitter)</span>
@@ -23,10 +23,11 @@
                         <div>
                             <span class="block text-surface-500 dark:text-surface-300 font-medium mb-4">YouTube</span>
                             <div class="text-surface-900 dark:text-surface-0 font-medium !text-xl">
+                                <img src="/youtube-mockup.png" alt="Mockup" class="mb-4">
                                 <Button as="router-link" label="Edit Mockup" to="/youtube" />
                             </div>
                         </div>
-                        <div class="flex items-center justify-center bg-red-100 dark:bg-red-400/30 rounded-border w-10 h-10">
+                        <div class="flex items-center justify-center bg-red-100 dark:bg-red-400/30 rounded-border min-w-10 w-10 h-10">
                             <i class="pi pi-youtube text-red-500 dark:text-red-200 !text-xl" />
                         </div>
                     </div>
