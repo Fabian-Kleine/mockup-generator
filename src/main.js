@@ -9,7 +9,6 @@ import './style.css'
 import 'primeicons/primeicons.css'
 import App from './App.vue'
 import HomeView from './views/HomeView.vue'
-import TestView from './views/TestView.vue'
 import XMockupView from './views/XMockupView.vue'
 import YouTubeMockupView from './views/YouTubeMockupView.vue'
 import YoutubeCommentMockupView from './views/YoutubeCommentMockupView.vue'
@@ -17,7 +16,6 @@ import WhatsappMockupView from './views/WhatsappMockupView.vue'
 
 const routes = [
     { path: '/', component: HomeView },
-    { path: '/test', component: TestView },
     { path: '/x', component: XMockupView },
     { path: '/youtube', component: YouTubeMockupView},
     { path: '/youtube-comment', component: YoutubeCommentMockupView},
