@@ -13,13 +13,15 @@ import TestView from './views/TestView.vue'
 import XMockupView from './views/XMockupView.vue'
 import YouTubeMockupView from './views/YouTubeMockupView.vue'
 import YoutubeCommentMockupView from './views/YoutubeCommentMockupView.vue'
+import WhatsappMockupView from './views/WhatsappMockupView.vue'
 
 const routes = [
     { path: '/', component: HomeView },
     { path: '/test', component: TestView },
     { path: '/x', component: XMockupView },
     { path: '/youtube', component: YouTubeMockupView},
-    { path: '/youtube-comment', component: YoutubeCommentMockupView}
+    { path: '/youtube-comment', component: YoutubeCommentMockupView},
+    { path: '/whatsapp', component: WhatsappMockupView}
 ]
 
 const router = createRouter({
