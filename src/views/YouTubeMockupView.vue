@@ -1,14 +1,13 @@
 <script setup lang="js">
-const recommendedVideosLength = Array.from({length: 7 });
+const recommendedVideosLength = Array.from({ length: 8 });
 </script>
 
 <template>
-    <nav class="w-full flex justify-between px-5 py-3">
-        <div class="w-36 flex items-center gap-6">
+    <nav class="w-full flex justify-between gap-2 px-5 py-3">
+        <div class="w-36 flex items-center gap-2 md:gap-6">
             <i class="pi pi-bars !text-xl"></i>
-            <svg class="fill-white" xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 90 20" focusable="false" aria-hidden="true"
-                style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+            <svg class="fill-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 20" focusable="false"
+                aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
 
                 <g>
                     <path
@@ -43,9 +42,13 @@ const recommendedVideosLength = Array.from({length: 7 });
             </svg>
         </div>
         <div class="flex justify-center gap-4 flex-[0_1_723px]">
-            <div class="flex flex-1">
-                <input type="text" class="border border-neutral-500 placeholder:text-neutral-400 bg-transparent rounded-s-full pl-4 py-1 focus:outline-none w-full" placeholder="Search">
-                <button class="bg-neutral-700 h-full pl-4 pr-6 rounded-e-full border-e border-t border-b border-neutral-500"><i class="pi pi-search"></i></button>
+            <div class="flex lg:flex-1 h-[42px]">
+                <input type="text"
+                    class="border border-neutral-500 placeholder:text-neutral-400 bg-transparent rounded-s-full pl-4 py-1 focus:outline-none w-full"
+                    placeholder="Search">
+                <button
+                    class="bg-neutral-700 h-full pl-4 pr-6 rounded-e-full border-e border-t border-b border-neutral-500"><i
+                        class="pi pi-search"></i></button>
             </div>
             <button class="bg-neutral-700 rounded-full w-10 h-10 align-middle">
                 <i class="pi pi-microphone"></i>
@@ -53,17 +56,54 @@ const recommendedVideosLength = Array.from({length: 7 });
         </div>
         <div class="flex items-center gap-2">
             <i class="pi pi-ellipsis-v"></i>
-            <button class="flex gap-2 justify-center items-center border border-gray-500 py-2 px-4 rounded-full font-bold"><i class="pi pi-user"></i>Log in</button>
+            <button
+                class="flex gap-2 justify-center items-center border border-gray-500 py-2 px-4 rounded-full font-bold text-nowrap"><i
+                    class="pi pi-user"></i>Log in</button>
         </div>
     </nav>
-    <div class="grid grid-cols-4 mx-20 mt-10 gap-4">
-        <div class="col-span-3">
+    <div class="block xl:grid grid-cols-4 mx-16 xl:mx-24 mt-10 gap-4">
+        <div class="col-span-3 mb-5 xl:mb-0">
             <div class="bg-neutral-700 w-full aspect-video rounded-xl"></div>
-            <h1 class="text-xl mt-2 font-bold">YouTube Title</h1>
+            <h1 contenteditable class="text-2xl my-2 font-bold focus:outline-none">YouTube Title</h1>
+            <div class="flex justify-between items-center h-[40px]">
+                <div class="flex h-full gap-3">
+                    <div class="w-10 h-10 rounded-full overflow-hidden">
+                        <img src="/x_placeholder.png" alt="Profile Picture" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <span class="block font-medium focus:outline-none" contenteditable>Username</span>
+                        <span class="block my-0 text-xs text-neutral-400"><span class=" focus:outline-none" contenteditable>2170</span> Subscribers</span>
+                    </div>
+                    <button class="bg-white rounded-full ml-2 h-full px-5 text-black font-medium">Subscribe</button>
+                </div>
+                <div class="flex items-center gap-2 h-full">
+                    <div class="flex justify-center items-center gap-2 bg-neutral-700 px-4 h-full rounded-full">
+                        <button class="flex items-center gap-2 font-bold px-1">
+                            <i class="pi pi-thumbs-up"></i>
+                            <span class="cursor-text focus:outline-none" contenteditable>4</span>
+                        </button>
+                        <div class="h-5 w-[1px] bg-neutral-500"></div>
+                        <button class="flex items-center px-1">
+                            <i class="pi pi-thumbs-down"></i>
+                        </button>
+                    </div>
+                    <button class="flex justify-center items-center gap-2 bg-neutral-700 px-4 h-full rounded-full font-bold text-sm">
+                        <i class="pi pi-send"></i>
+                        Share
+                    </button>
+                    <button class="flex justify-center items-center gap-2 bg-neutral-700 px-4 h-full rounded-full font-bold text-sm">
+                        <i class="pi pi-bookmark"></i>
+                        Save
+                    </button>
+                    <button class="flex justify-center items-center gap-2 bg-neutral-700 aspect-square h-full rounded-full font-bold text-sm">
+                        <i class="pi pi-ellipsis-h"></i>
+                    </button>
+                </div>
+            </div>
         </div>
         <div class="space-y-4">
             <div class="flex gap-2" v-for="recommended in recommendedVideosLength">
-                <div class="bg-neutral-700 h-24 aspect-video rounded-xl"></div>
+                <div class="bg-neutral-700 h-24 aspect-video rounded-md"></div>
                 <div class="flex-1">
                     <div class="bg-neutral-700 w-full h-4 rounded-xl mb-2"></div>
                     <div class="bg-neutral-700 w-32 h-4 rounded-xl my-2"></div>
