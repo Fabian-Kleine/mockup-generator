@@ -1,5 +1,9 @@
 <template>
       <div class="px-6 py-8 md:px-12 lg:px-20 w-screen">
+        <div class="flex items-center gap-2 mb-4">
+            <img src="/Mockup-generator-logo.png" alt="Logo" width="50">
+            <h1 class="text-xl font-bold">Mockup Creator</h1>
+        </div>
         <div class="grid grid-cols-12 gap-4">
             <div class="col-span-12 md:col-span-6 lg:col-span-3">
                 <div class="bg-surface-0 dark:bg-surface-900 shadow p-4 rounded-border h-full">
