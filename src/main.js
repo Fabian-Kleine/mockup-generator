@@ -17,6 +17,7 @@ import PhoneMockupView from './views/PhoneMockupView.vue'
 import LockscreenMockupView from './views/LockscreenMockupView.vue'
 import ImageMockupView from './views/ImageMockupView.vue'
 import BrowserMockupView from './views/BrowserMockupView.vue'
+import WindowMockupView from './views/WindowMockupView.vue'
 
 const routes = [
     { path: '/', component: HomeView },
@@ -27,7 +28,8 @@ const routes = [
     { path: '/phone', component: PhoneMockupView },
     { path: '/lockscreen', component: LockscreenMockupView },
     { path: '/image', component: ImageMockupView },
-    { path: '/browser', component: BrowserMockupView }
+    { path: '/browser', component: BrowserMockupView },
+    { path: '/window', component: WindowMockupView }
 ]
 
 const router = createRouter({
