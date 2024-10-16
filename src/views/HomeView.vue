@@ -71,7 +71,7 @@
                         <div class="flex flex-col h-full">
                             <span class="block text-surface-500 dark:text-surface-300 font-medium mb-4">Phone Mockup</span>
                             <div class="text-surface-900 dark:text-surface-0 font-medium !text-xl flex justify-center">
-                                <img src="/whatsapp-mockup.png" alt="Mockup" class="rounded-md w-[90%]">
+                                <img src="/phone-mockup.png" alt="Mockup" class="rounded-md w-[90%]">
                             </div>
                             <Button class="mt-auto" as="router-link" label="Edit Mockup" to="/phone" />
                         </div>
