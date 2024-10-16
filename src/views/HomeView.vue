@@ -1,5 +1,5 @@
 <template>
-      <div class="px-6 py-8 md:px-12 lg:px-20 w-screen">
+      <div class="px-6 py-8 md:px-12 lg:px-20 max-w-screen overflow-x-hidden">
         <div class="flex items-center gap-2 mb-4">
             <img src="/Mockup-generator-logo.png" alt="Logo" width="50">
             <h1 class="text-xl font-bold">Mockup Creator</h1>
@@ -129,6 +129,22 @@
                         </div>
                         <div class="w-10 h-10 min-w-10 flex items-center justify-center bg-pink-100 dark:bg-pink-400/30 rounded-border">
                             <i class="pi pi-globe text-pink-500 dark:text-pink-200 !text-xl" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-span-12 md:col-span-6 lg:col-span-3">
+                <div class="bg-surface-0 dark:bg-surface-900 shadow p-4 rounded-border h-full">
+                    <div class="flex justify-between mb-4 h-full">
+                        <div class="flex flex-col h-full">
+                            <span class="block text-surface-500 dark:text-surface-300 font-medium mb-4">Window Mockup</span>
+                            <div class="text-surface-900 dark:text-surface-0 font-medium !text-xl flex justify-center">
+                                <img src="/browser-mockup.png" alt="Mockup" class="rounded-md w-[90%]">
+                            </div>
+                            <Button class="mt-auto" as="router-link" label="Edit Mockup" to="/window" />
+                        </div>
+                        <div class="w-10 h-10 min-w-10 flex items-center justify-center bg-pink-100 dark:bg-pink-400/30 rounded-border">
+                            <i class="pi pi-window-maximize text-pink-500 dark:text-pink-200 !text-xl" />
                         </div>
                     </div>
                 </div>
