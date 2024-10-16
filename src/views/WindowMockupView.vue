@@ -83,7 +83,7 @@ function onImageSelect(e) {
             </div>
             <div class="flex gap-2 mt-4">
                 <Button as="router-link" class="flex-1" label="Cancel" severity="secondary" to="/" />
-                <Button class="flex-1" label="Download" @click="downloadCapture('browser-mockup.png')" />
+                <Button class="flex-1" label="Download" @click="downloadCapture('window-mockup.png')" />
             </div>
         </div>
         <div :style="background == 'linear-gradient' ? { 'background-image': `linear-gradient(${gradientAngle}deg, #${gradientColors.color1}, #${gradientColors.color2})` }
