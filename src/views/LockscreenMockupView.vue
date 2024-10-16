@@ -95,10 +95,6 @@ function onNotifIconSelect(e) {
                     optionValue="value" placeholder='Select a Background' class="w-full" />
                 <label for="background">Background</label>
             </IftaLabel>
-            <div class="flex items-center mt-4">
-                <ToggleSwitch v-model="darkmode" inputId="darkmode" />
-                <label for="darkmode" class="ml-2"> Dark Mode </label>
-            </div>
             <div
                 :class="['overflow-hidden space-x-2 transition-all box-content', background == 'linear-gradient' || background == 'radial-gradient' ? 'max-h-56 pb-4' : 'max-h-0']">
                 <IftaLabel class="!inline-block">
@@ -113,6 +109,10 @@ function onNotifIconSelect(e) {
                     }}deg</label>
                 <Slider v-if="background == 'linear-gradient'" class="mt-4" v-model="gradientAngle" :step="5" :max="360"
                     id="gradientAngle" />
+            </div>
+            <div class="flex items-center mt-4">
+                <ToggleSwitch v-model="darkmode" inputId="darkmode" />
+                <label for="darkmode" class="ml-2"> Dark Mode </label>
             </div>
             <Button label="Select Background Image" @click="phoneBgDialog = true" />
             <div class="px-2 space-y-2">
