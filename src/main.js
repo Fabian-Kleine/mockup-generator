@@ -16,6 +16,7 @@ import WhatsappMockupView from './views/WhatsappMockupView.vue'
 import PhoneMockupView from './views/PhoneMockupView.vue'
 import LockscreenMockupView from './views/LockscreenMockupView.vue'
 import ImageMockupView from './views/ImageMockupView.vue'
+import BrowserMockupView from './views/BrowserMockupView.vue'
 
 const routes = [
     { path: '/', component: HomeView },
@@ -25,7 +26,8 @@ const routes = [
     { path: '/whatsapp', component: WhatsappMockupView },
     { path: '/phone', component: PhoneMockupView },
     { path: '/lockscreen', component: LockscreenMockupView },
-    { path: '/image', component: ImageMockupView }
+    { path: '/image', component: ImageMockupView },
+    { path: '/browser', component: BrowserMockupView }
 ]
 
 const router = createRouter({
