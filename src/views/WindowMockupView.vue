@@ -35,6 +35,10 @@ const backgroundOptions = [
     {
         color: 'Radial Gradient',
         value: 'radial-gradient'
+    },
+    {
+        color: 'None',
+        value: 'none'
     }
 ]
 
@@ -89,8 +93,8 @@ function onImageSelect(e) {
         <div :style="background == 'linear-gradient' ? { 'background-image': `linear-gradient(${gradientAngle}deg, #${gradientColors.color1}, #${gradientColors.color2})` }
             : background == 'radial-gradient' ? { 'background-image': `radial-gradient(#${gradientColors.color1} 25%, #${gradientColors.color2})` } : {}"
             :class="['relative col-span-3 flex justify-center items-center max-h-screen', background == 'white' ? 'bg-white' : '']"
-            id="capture">
-            <div
+            :id="background != 'none' ? 'capture' : ''">
+            <div :id="background == 'none' ? 'capture' : ''"
                 :class="['rounded-2xl overflow-hidden shadow-black/40 h-[500px] w-11/12 xl:w-2/3 shadow-[0_25px_50px_0_rgb(0_0_0_/_0.35)]', darkmode ? 'bg-zinc-800' : 'bg-zinc-200']">
                 <div class="w-full h-[90%]">
                     <div
