@@ -32,6 +32,9 @@ function onSelect(e) {
     <div class="w-full min-h-screen block xl:grid grid-cols-4 gap-4">
         <div class="flex flex-col gap-4 mt-4 px-4 edit-tweet mb-10 xl:mb-0">
             <h2 class="text-xl font-bold">Edit YouTube Comment Mockup</h2>
+            <p>
+                Click on a text to edit it.
+            </p>
             <IftaLabel>
                 <Select inputId="background" v-model="background" :options="backgroundOptions" optionLabel="color"
                     optionValue="value" placeholder='Select a Background' class="w-full" />
