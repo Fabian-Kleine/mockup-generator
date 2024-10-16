@@ -55,3 +55,15 @@
   left: -10px;
   top: 0;
 }
+
+.phone-blur::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backdrop-filter: var(--custom-blur);
+  backdrop-filter: var(--custom-blur);
+  border-radius: 2rem;
+}

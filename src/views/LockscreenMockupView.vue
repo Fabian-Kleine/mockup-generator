@@ -2,12 +2,14 @@
 import { ref, reactive } from 'vue';
 import Card from 'primevue/card';
 import IftaLabel from 'primevue/iftalabel';
+import InputText from 'primevue/inputtext';
 import ColorPicker from 'primevue/colorpicker';
 import Dialog from 'primevue/dialog';
 import DatePicker from 'primevue/datepicker';
 import Select from 'primevue/select';
 import Slider from 'primevue/slider';
 import FileUpload from 'primevue/fileupload';
+import ToggleSwitch from 'primevue/toggleswitch';
 import downloadCapture from '../lib/utils';
 
 const background = ref("dark");
@@ -21,6 +23,11 @@ const phoneBgBlur = ref(0);
 const date = ref("Wed Oct 09 2024 21:43:52 GMT+0200 (Mitteleuropäische Sommerzeit)");
 const time = ref("Wed Oct 09 2024 21:43:52 GMT+0200 (Mitteleuropäische Sommerzeit)");
 const phoneBgDialog = ref(false);
+const notifications = ref([]);
+const notificationTitle = ref("");
+const notificationText = ref("");
+const notificationIcon = ref("");
+const darkmode = ref(false);
 
 const backgroundOptions = [
     {
@@ -49,6 +56,20 @@ function onPhoneBgSelect(e) {
     phoneBg.value = e.files[0].objectURL;
     phoneBgDialog.value = false;
 }
+
+function addNotification() {
+    let newNotification = {
+        title: notificationTitle.value,
+        text: notificationText.value,
+        icon: notificationIcon.value
+    };
+    notifications.value.push(newNotification);
+    notificationText.value = '';
+}
+
+function onNotifIconSelect(e) {
+    notificationIcon.value = e.files[0].objectURL;
+}
 </script>
 
 <template>
@@ -74,6 +95,10 @@ function onPhoneBgSelect(e) {
                     optionValue="value" placeholder='Select a Background' class="w-full" />
                 <label for="background">Background</label>
             </IftaLabel>
+            <div class="flex items-center mt-4">
+                <ToggleSwitch v-model="darkmode" inputId="darkmode" />
+                <label for="darkmode" class="ml-2"> Dark Mode </label>
+            </div>
             <div
                 :class="['overflow-hidden space-x-2 transition-all box-content', background == 'linear-gradient' || background == 'radial-gradient' ? 'max-h-56 pb-4' : 'max-h-0']">
                 <IftaLabel class="!inline-block">
@@ -94,6 +119,28 @@ function onPhoneBgSelect(e) {
                 <label for="backgroundBlur">Background Blur</label>
                 <Slider v-model="phoneBgBlur" :max="100" id="backgroundBlur" />
             </div>
+            <div class="h-[1px] w-full bg-neutral-500"></div>
+            <h3 class="mt-2 font-bold text-lg">Add Noficiations</h3>
+            <IftaLabel>
+                <InputText fluid id="notificationTitle" v-model="notificationTitle" variant="filled"
+                    placeholder="Type Title..." />
+                <label for="notificationTitle">Notification Title</label>
+            </IftaLabel>
+            <IftaLabel>
+                <InputText fluid id="notificationText" v-model="notificationText" variant="filled"
+                    placeholder="Type Notification..." />
+                <label for="notificationText">Notification Text</label>
+            </IftaLabel>
+            <div class="flex gap-2">
+                <img v-if="notificationIcon" :src="notificationIcon" alt="notification icon" class="w-10 h-10">
+                <FileUpload :chooseButtonProps="{ class: 'w-max flex-1' }" mode="basic" accept="image/*" @select="onNotifIconSelect"
+                chooseLabel="Upload Notification Icon" />
+            </div>
+            <div class="flex gap-2 mt-4">
+                <Button class="flex-1" label="Add notification" :disabled="!notificationText || !notificationText || !notificationIcon || notifications.length >= 2" @click="addNotification()" />
+                <Button v-if="notifications.length" class="flex-1" severity="danger" label="Remove all notifications" @click="notifications = []" />
+            </div>
+            <div class="h-[1px] w-full bg-neutral-500"></div>
             <div class="flex gap-2 mt-4">
                 <Button as="router-link" class="flex-1" label="Cancel" severity="secondary" to="/" />
                 <Button class="flex-1" label="Download" @click="downloadCapture('phone-mockup.png')" />
@@ -101,7 +148,7 @@ function onPhoneBgSelect(e) {
         </div>
         <div :style="background == 'linear-gradient' ? { 'background-image': `linear-gradient(${gradientAngle}deg, #${gradientColors.color1}, #${gradientColors.color2})` }
             : background == 'radial-gradient' ? { 'background-image': `radial-gradient(#${gradientColors.color1} 25%, #${gradientColors.color2})` } : {}"
-            :class="['relative col-span-3 flex justify-center items-center min-h-[800px]', background == 'white' ? 'bg-white' : '']"
+            :class="['relative col-span-3 flex justify-center items-center min-h-[800px] max-h-screen', background == 'white' ? 'bg-white' : '']"
             :id="background != 'none' ? 'capture' : ''">
             <div :class="['relative rounded-[2.5rem] border-neutral-800 bg-neutral-800 border-[14px] h-[600px] w-[300px]', background != 'none' ? 'shadow-2xl' : '']"
                 :id="background == 'none' ? 'capture' : ''">
@@ -115,8 +162,8 @@ function onPhoneBgSelect(e) {
                 </div>
                 <div class="rounded-[2rem] overflow-hidden w-[272px] h-[572px] bg-white bg-cover bg-center"
                     :style="phoneBg ? { 'background-image': `url(${phoneBg})` } : {}">
-                    <div class=" flex flex-col h-full" :style="{ 'backdrop-filter': `blur(${phoneBgBlur}px)` }">
-                        <div class="h-6 w-full flex justify-end items-center gap-1 px-5 pt-4">
+                    <div class=" flex phone-blur flex-col h-full" :style="{ '--custom-blur': `blur(${phoneBgBlur}px)` }">
+                        <div class="h-6 w-full flex justify-end items-center gap-1 px-5 pt-4 z-10">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" class="lucide lucide-signal-high">
@@ -135,7 +182,7 @@ function onPhoneBgSelect(e) {
                                 <line x1="10" x2="10" y1="11" y2="13" />
                             </svg>
                         </div>
-                        <div class="flex-1 flex justify-start items-center flex-col pt-10">
+                        <div class="flex-1 flex justify-start items-center flex-col pt-10 z-10">
                             <h4>{{ new Intl.DateTimeFormat('en-US', {
                                 weekday: 'long',
                                 month: 'long',
@@ -146,7 +193,20 @@ function onPhoneBgSelect(e) {
                                 minute: "2-digit"
                             }).format(new Date(time)) }}</h3>
                         </div>
-                        <div class="flex-1 flex flex-col justify-end items-center">
+                        <div class="flex-1 flex flex-col justify-end items-center z-10">
+                            <div class="space-y-2 w-full px-3 mb-4">
+                                <template v-for="notification in notifications">
+                                    <div :class="['relative flex items-center gap-2 backdrop-blur-lg px-2 py-4 rounded-2xl shadow-sm overflow-hidden z-20', darkmode ? 'bg-black/35 text-white' : 'bg-white/35 text-black']">
+                                        <div class="overflow-hidden w-8 h-8 rounded-sm">
+                                            <img :src="notification.icon" alt="notification icon" class="w-full h-full object-cover">
+                                        </div>
+                                        <div class="flex-1 max-w-[80%]">
+                                            <span class="block text-sm font-bold truncate">{{ notification.title }}</span>
+                                            <p class="text-sm break-words">{{ notification.text }}</p>
+                                        </div>
+                                    </div>
+                                </template>
+                            </div>
                             <div class="flex justify-between mb-8 w-full px-10">
                                 <div class="h-8 w-8 flex justify-center items-center p-2 bg-black/50 rounded-full">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
