@@ -14,6 +14,7 @@ import YouTubeMockupView from './views/YouTubeMockupView.vue'
 import YoutubeCommentMockupView from './views/YoutubeCommentMockupView.vue'
 import WhatsappMockupView from './views/WhatsappMockupView.vue'
 import PhoneMockupView from './views/PhoneMockupView.vue'
+import LockscreenMockupView from './views/LockscreenMockupView.vue'
 
 const routes = [
     { path: '/', component: HomeView },
@@ -21,7 +22,8 @@ const routes = [
     { path: '/youtube', component: YouTubeMockupView },
     { path: '/youtube-comment', component: YoutubeCommentMockupView },
     { path: '/whatsapp', component: WhatsappMockupView },
-    { path: '/phone', component: PhoneMockupView }
+    { path: '/phone', component: PhoneMockupView },
+    { path: '/lockscreen', component: LockscreenMockupView }
 ]
 
 const router = createRouter({
