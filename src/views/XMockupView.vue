@@ -36,6 +36,9 @@ function onSelect(e) {
     <div class="w-full min-h-screen block xl:grid grid-cols-4 gap-4">
         <div class="flex flex-col gap-4 mt-4 px-4 edit-tweet mb-10 xl:mb-0">
             <h2 class="text-xl font-bold">Edit Tweet Mockup</h2>
+            <p>
+                Click on a text (except time and date) to edit it.
+            </p>
             <div class="flex items-center">
                 <Checkbox v-model="verified" binary inputId="verified" name="verified" value="Verified" />
                 <label for="verified" class="ml-2"> Verified </label>

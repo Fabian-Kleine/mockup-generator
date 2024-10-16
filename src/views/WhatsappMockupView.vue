@@ -49,6 +49,9 @@ function addMessage(action) {
     <div class="w-full min-h-screen block xl:grid grid-cols-4 gap-4">
         <div class="flex flex-col gap-4 mt-4 px-4 edit-tweet mb-10 xl:mb-0">
             <h2 class="text-xl font-bold">Edit Whatsapp Chat Mockup</h2>
+            <p>
+                Click on the Name to edit it.
+            </p>
             <IftaLabel>
                 <Select inputId="background" v-model="background" :options="backgroundOptions" optionLabel="color"
                     optionValue="value" placeholder='Select a Background' class="w-full" />
@@ -65,6 +68,9 @@ function addMessage(action) {
                 <InputText fluid id="messageText" v-model="messageText" variant="filled" placeholder="Type Message..." />
                 <label for="messageText">Message Text</label>
             </IftaLabel>
+            <p>
+                You can copy emojis from <a class="underline" href="https://getemoji.com/" target="_blank">getemoji.com</a>.
+            </p>
             <IftaLabel>
                 <DatePicker v-model="time" fluid inputId="time" showIcon iconDisplay="input" variant="filled" timeOnly
                     hourFormat="12">
