@@ -13,6 +13,7 @@ const proiflePicture = ref("/x_placeholder.png");
 const image = ref("");
 const name = ref("Name");
 const description = ref("");
+const darkmode = ref(false);
 
 const backgroundOptions = [
     {
@@ -66,6 +67,10 @@ function onImageSelect(e) {
                 <ToggleSwitch v-model="hidePhone" inputId="hidePhone" />
                 <label for="hidePhone" class="ml-2"> Hide Phone </label>
             </div>
+            <div class="flex items-center mt-4">
+                <ToggleSwitch v-model="darkmode" inputId="darkmode" />
+                <label for="darkmode" class="ml-2"> Darkmode </label>
+            </div>
             <div class="space-y-2 mt-4 w-full">
                 <FileUpload :chooseButtonProps="{ class: 'flex-1' }" mode="basic" accept="image/*" @select="onSelect"
                     chooseLabel="Upload Profile Picture" />
@@ -98,7 +103,7 @@ function onImageSelect(e) {
                 <div class="h-[64px] w-[3px] bg-neutral-800 absolute -end-[17px] top-[142px] rounded-e-lg"
                     v-if="!hidePhone">
                 </div>
-                <div class="rounded-[2rem] overflow-hidden w-[272px] h-[572px] flex flex-col bg-white text-black">
+                <div :class="['rounded-[2rem] overflow-hidden w-[272px] h-[572px] flex flex-col', darkmode ? 'bg-neutral-800 text-white' : 'bg-white text-black']">
                     <div class="flex justify-between items-center px-3 py-4">
                         <div class="flex items-center gap-2">
                             <div class="w-8 h-8 rounded-full overflow-hidden">
@@ -107,11 +112,11 @@ function onImageSelect(e) {
                             <span class="block text-nowrap overflow-hidden max-w-[100px] mr-2">{{ name }}</span>
                         </div>
                         <div class="flex items-center gap-1 text-sm">
-                            <button class="border border-black px-4 py-1 rounded-lg">Follow</button>
+                            <button :class="['border px-4 py-1 rounded-lg', darkmode ? 'border-white' : 'border-black']">Follow</button>
                             <i class="pi pi-ellipsis-v !text-sm"></i>
                         </div>
                     </div>
-                    <div class="w-full aspect-square overflow-hidden bg-neutral-200">
+                    <div :class="['w-full aspect-square overflow-hidden', darkmode ? 'bg-neutral-700' : 'bg-neutral-200']">
                         <img v-if="image" :src="image" alt="instagram post" class="h-full w-full object-cover">
                     </div>
                     <div class="flex justify-between px-2 py-1">
@@ -141,11 +146,11 @@ function onImageSelect(e) {
                             <span class="block text-nowrap overflow-hidden max-w-[100px] mr-2">{{ name }}</span>
                         </div>
                         <div class="flex items-center gap-1 text-sm">
-                            <button class="border border-black px-4 py-1 rounded-lg">Follow</button>
+                            <button :class="['border px-4 py-1 rounded-lg', darkmode ? 'border-white' : 'border-black']">Follow</button>
                             <i class="pi pi-ellipsis-v !text-sm"></i>
                         </div>
                     </div>
-                    <div class="flex-1 bg-neutral-200"></div>
+                    <div :class="['flex-1', darkmode ? 'bg-neutral-700' : 'bg-neutral-200']"></div>
                 </div>
             </div>
             <div v-if="background != 'none'"
