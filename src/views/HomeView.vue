@@ -1,7 +1,7 @@
 <template>
     <div class="flex lg:flex-row flex-col gap-4">
         <div class="flex-1 flex items-center justify-center">
-            <div class="p-6 pt-12 lg:p-12">
+            <div class="p-6 pt-12 lg:p-12 lg:px-20">
                 <h1
                     class="text-3xl lg:text-5xl font-bold text-surface-900 dark:text-surface-0 mb-4 lg:leading-normal text-center lg:text-left">
                     Mockup Creator
