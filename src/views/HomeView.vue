@@ -217,7 +217,7 @@
                             <span class="block text-surface-500 dark:text-surface-300 font-medium mb-4">Phone Call
                                 Mockup</span>
                             <div class="text-surface-900 dark:text-surface-0 font-medium !text-xl flex justify-center">
-                                <img src="/lockscreen-mockup.png" alt="Mockup" class="rounded-md w-[90%]">
+                                <img src="/call-mockup.png" alt="Mockup" class="rounded-md w-[90%]">
                             </div>
                             <Button class="mt-auto" as="router-link" label="Edit Mockup" to="/call" />
                         </div>
