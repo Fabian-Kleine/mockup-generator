@@ -22,6 +22,7 @@ import InstagramMockupView from './views/InstagramMockupView.vue'
 import TiktokMockupView from './views/TiktokMockupView.vue'
 import SpotifyView from './views/SpotifyView.vue'
 import SpotifyDesktopView from './views/SpotifyDesktopView.vue'
+import CallMockupView from './views/CallMockupView.vue'
 
 const routes = [
     { path: '/', component: HomeView },
@@ -37,7 +38,8 @@ const routes = [
     { path: '/instagram', component: InstagramMockupView },
     { path: '/tiktok', component: TiktokMockupView },
     { path: '/spotify', component: SpotifyView },
-    { path: '/spotify-desktop', component: SpotifyDesktopView }
+    { path: '/spotify-desktop', component: SpotifyDesktopView },
+    { path: '/call', component: CallMockupView }
 ]
 
 const router = createRouter({
