@@ -84,7 +84,7 @@ function onImageSelect(e) {
             </IftaLabel>
             <div class="flex gap-2 mt-4">
                 <Button as="router-link" class="flex-1" label="Cancel" severity="secondary" to="/" />
-                <Button class="flex-1" label="Download" @click="downloadCapture('window-mockup.png')" />
+                <Button class="flex-1" label="Download" @click="downloadCapture('spotify-mockup.png')" />
             </div>
         </div>
         <div :class="['relative col-span-3 flex justify-center items-center max-h-screen', background == 'white' ? 'bg-white' : '', background == 'desktop' ? 'bg-[url(/macos.png)] bg-contain bg-no-repeat bg-center' : background == 'green' ? 'bg-[#1db954]' : '']"
