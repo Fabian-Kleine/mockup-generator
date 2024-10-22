@@ -6,7 +6,7 @@ import ToggleSwitch from 'primevue/toggleswitch';
 import IftaLabel from 'primevue/iftalabel';
 import DatePicker from 'primevue/datepicker';
 import { RouterLink } from 'vue-router';
-import downloadCapture from '../lib/utils';
+import downloadCapture from '../../lib/utils';
 
 const editDialogVisible = ref(true);
 const proiflePicture = ref("/x_placeholder.png");

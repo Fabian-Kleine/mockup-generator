@@ -4,7 +4,7 @@ import DatePicker from 'primevue/datepicker';
 import IftaLabel from 'primevue/iftalabel';
 import FileUpload from 'primevue/fileupload';
 import Select from 'primevue/select';
-import downloadCapture from '../lib/utils';
+import downloadCapture from '../../lib/utils';
 
 const verified = ref(false);
 const background = ref("blue");

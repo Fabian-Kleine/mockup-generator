@@ -6,7 +6,7 @@ import ColorPicker from 'primevue/colorpicker';
 import Select from 'primevue/select';
 import FileUpload from 'primevue/fileupload';
 import ToggleSwitch from 'primevue/toggleswitch';
-import downloadCapture from '../lib/utils';
+import downloadCapture from '../../lib/utils';
 
 const background = ref("dark");
 const image = ref("/spotify_default_cover.png");
