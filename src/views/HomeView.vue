@@ -81,6 +81,23 @@
                 <div class="bg-surface-0 dark:bg-surface-900 shadow p-4 rounded-border h-full">
                     <div class="flex justify-between mb-4 h-full">
                         <div class="flex flex-col h-full">
+                            <span class="block text-surface-500 dark:text-surface-300 font-medium mb-4">Twitch Stream</span>
+                            <div class="text-surface-900 dark:text-surface-0 font-medium !text-xl flex justify-center">
+                                <img src="/youtube-mockup.png" alt="Mockup" class="rounded-md w-[90%]">
+                            </div>
+                            <Button class="mt-auto" as="router-link" label="Edit Mockup" to="/twitch" />
+                        </div>
+                        <div
+                            class="flex items-center justify-center bg-purple-100 dark:bg-purple-400/30 rounded-border min-w-10 w-10 h-10">
+                            <i class="pi pi-twitch text-purple-500 dark:text-purple-200 !text-xl" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-span-12 md:col-span-6 lg:col-span-3">
+                <div class="bg-surface-0 dark:bg-surface-900 shadow p-4 rounded-border h-full">
+                    <div class="flex justify-between mb-4 h-full">
+                        <div class="flex flex-col h-full">
                             <span class="block text-surface-500 dark:text-surface-300 font-medium mb-4">Whatsapp
                                 Chat</span>
                             <div class="text-surface-900 dark:text-surface-0 font-medium !text-xl flex justify-center">
