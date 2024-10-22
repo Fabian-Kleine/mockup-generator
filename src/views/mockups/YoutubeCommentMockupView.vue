@@ -6,7 +6,7 @@ import Select from 'primevue/select';
 import downloadCapture from '../../lib/utils';
 
 const background = ref("dark");
-const proiflePicture = ref("/x_placeholder.png");
+const proiflePicture = ref("./x_placeholder.png");
 
 const backgroundOptions = [
     {

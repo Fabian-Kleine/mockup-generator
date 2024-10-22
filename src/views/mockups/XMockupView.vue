@@ -10,7 +10,7 @@ const verified = ref(false);
 const background = ref("blue");
 const date = ref("Wed Oct 09 2024 21:43:52 GMT+0200 (Mitteleuropäische Sommerzeit)");
 const time = ref("Wed Oct 09 2024 21:43:52 GMT+0200 (Mitteleuropäische Sommerzeit)");
-const proiflePicture = ref("/x_placeholder.png");
+const proiflePicture = ref("./x_placeholder.png");
 
 const backgroundOptions = [
     {

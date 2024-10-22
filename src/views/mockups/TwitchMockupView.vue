@@ -3,13 +3,11 @@ import Drawer from 'primevue/drawer';
 import { ref } from 'vue';
 import FileUpload from 'primevue/fileupload';
 import ToggleSwitch from 'primevue/toggleswitch';
-import IftaLabel from 'primevue/iftalabel';
-import DatePicker from 'primevue/datepicker';
 import { RouterLink } from 'vue-router';
 import downloadCapture from '../../lib/utils';
 
 const editDialogVisible = ref(true);
-const proiflePicture = ref("/x_placeholder.png");
+const proiflePicture = ref("./x_placeholder.png");
 const thumbnail = ref("");
 const twitchLogo = ref(true);
 const hideNavbar = ref(false);
@@ -231,8 +229,8 @@ function onThumbnailSelect(e) {
             <div class="flex justify-center gap-2 mt-4">
                 <FileUpload class="flex-1" mode="basic" accept="image/*" @select="onSelect"
                     chooseLabel="Upload Profile Picture" />
-                <Button class="flex-1" v-if="proiflePicture != '/x_placeholder.png'" label="Remove Profile Picture"
-                    severity="danger" @click="proiflePicture = '/x_placeholder.png'" />
+                <Button class="flex-1" v-if="proiflePicture != './x_placeholder.png'" label="Remove Profile Picture"
+                    severity="danger" @click="proiflePicture = './x_placeholder.png'" />
             </div>
             <div class="flex justify-center gap-2 mt-4">
                 <FileUpload :chooseButtonProps="{ class: 'flex-1' }" mode="basic" accept="image/*"

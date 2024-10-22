@@ -10,7 +10,7 @@ import downloadCapture from '../../lib/utils';
 
 const background = ref("green");
 const hidePhone = ref(false);
-const proiflePicture = ref("/x_placeholder.png");
+const proiflePicture = ref("./x_placeholder.png");
 const messages = ref([]);
 const messageText = ref("");
 const time = ref("Wed Oct 09 2024 21:43:52 GMT+0200 (Mitteleuropäische Sommerzeit)");
