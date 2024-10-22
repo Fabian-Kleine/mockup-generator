@@ -109,76 +109,91 @@ function onThumbnailSelect(e) {
                     <div class="flex-1 px-3 space-y-4 text-sm flex flex-col justify-end">
                         <div>
                             <div class="flex items-center">
-                                <span class="bg-blue-400 h-3 w-14 rounded-full inline-block mr-0.5"></span>: <span class="flex-1 bg-neutral-500 h-3 rounded-full inline-block ml-2"></span>
+                                <span class="bg-blue-400 h-3 w-14 rounded-full inline-block mr-0.5"></span>: <span
+                                    class="flex-1 bg-neutral-500 h-3 rounded-full inline-block ml-2"></span>
                             </div>
                             <div class="w-full h-3 bg-neutral-500 rounded-full mt-1"></div>
                             <div class="w-52 h-3 bg-neutral-500 rounded-full mt-2"></div>
                         </div>
                         <div>
-                            <span class="bg-orange-400 h-3 w-24 rounded-full inline-block mr-0.5"></span>: <span class="w-52 bg-neutral-500 h-3 rounded-full inline-block ml-2"></span>
+                            <span class="bg-orange-400 h-3 w-24 rounded-full inline-block mr-0.5"></span>: <span
+                                class="w-52 bg-neutral-500 h-3 rounded-full inline-block ml-2"></span>
                         </div>
                         <div>
                             <div class="flex items-center">
-                                <span class="bg-green-400 h-3 w-16 rounded-full inline-block mr-0.5"></span>: <span class="flex-1 bg-neutral-500 h-3 rounded-full inline-block ml-2"></span>
+                                <span class="bg-green-400 h-3 w-16 rounded-full inline-block mr-0.5"></span>: <span
+                                    class="flex-1 bg-neutral-500 h-3 rounded-full inline-block ml-2"></span>
                             </div>
                             <div class="w-32 h-3 bg-neutral-500 rounded-full mt-1"></div>
                         </div>
                         <div>
                             <div class="flex items-center">
-                                <span class="bg-purple-400 h-3 w-32 rounded-full inline-block mr-0.5"></span>: <span class="flex-1 bg-neutral-500 h-3 rounded-full inline-block ml-2"></span>
+                                <span class="bg-purple-400 h-3 w-32 rounded-full inline-block mr-0.5"></span>: <span
+                                    class="flex-1 bg-neutral-500 h-3 rounded-full inline-block ml-2"></span>
                             </div>
                             <div class="w-full h-3 bg-neutral-500 rounded-full mt-1"></div>
                             <div class="w-full h-3 bg-neutral-500 rounded-full mt-2"></div>
                             <div class="w-36 h-3 bg-neutral-500 rounded-full mt-2"></div>
                         </div>
                         <div>
-                            <span class="bg-red-600 h-3 w-14 rounded-full inline-block mr-0.5"></span>: <span class="w-12 bg-neutral-500 h-3 rounded-full inline-block ml-2"></span>
+                            <span class="bg-red-600 h-3 w-14 rounded-full inline-block mr-0.5"></span>: <span
+                                class="w-12 bg-neutral-500 h-3 rounded-full inline-block ml-2"></span>
                         </div>
                         <div>
                             <div class="flex items-center">
-                                <span class="bg-cyan-300 h-3 w-24 rounded-full inline-block mr-0.5"></span>: <span class="flex-1 bg-neutral-500 h-3 rounded-full inline-block ml-2"></span>
+                                <span class="bg-cyan-300 h-3 w-24 rounded-full inline-block mr-0.5"></span>: <span
+                                    class="flex-1 bg-neutral-500 h-3 rounded-full inline-block ml-2"></span>
                             </div>
                             <div class="w-48 h-3 bg-neutral-500 rounded-full mt-1"></div>
                         </div>
                         <div>
-                            <span class="bg-amber-500 h-3 w-14 rounded-full inline-block mr-0.5"></span>: <span class="w-36 bg-neutral-500 h-3 rounded-full inline-block ml-2"></span>
+                            <span class="bg-amber-500 h-3 w-14 rounded-full inline-block mr-0.5"></span>: <span
+                                class="w-36 bg-neutral-500 h-3 rounded-full inline-block ml-2"></span>
                         </div>
                         <div>
-                            <span class="bg-green-700 h-3 w-20 rounded-full inline-block mr-0.5"></span>: <span class="w-48 bg-neutral-500 h-3 rounded-full inline-block ml-2"></span>
+                            <span class="bg-green-700 h-3 w-20 rounded-full inline-block mr-0.5"></span>: <span
+                                class="w-48 bg-neutral-500 h-3 rounded-full inline-block ml-2"></span>
                         </div>
                         <div>
-                            <span class="bg-red-600 h-3 w-12 rounded-full inline-block mr-0.5"></span>: <span class="w-14 bg-neutral-500 h-3 rounded-full inline-block ml-2"></span>
+                            <span class="bg-red-600 h-3 w-12 rounded-full inline-block mr-0.5"></span>: <span
+                                class="w-14 bg-neutral-500 h-3 rounded-full inline-block ml-2"></span>
                         </div>
                         <div>
-                            <span class="bg-blue-400 h-3 w-24 rounded-full inline-block mr-0.5"></span>: <span class="w-32 bg-neutral-500 h-3 rounded-full inline-block ml-2"></span>
+                            <span class="bg-blue-400 h-3 w-24 rounded-full inline-block mr-0.5"></span>: <span
+                                class="w-32 bg-neutral-500 h-3 rounded-full inline-block ml-2"></span>
                         </div>
                         <div>
                             <div class="flex items-center">
-                                <span class="bg-blue-400 h-3 w-14 rounded-full inline-block mr-0.5"></span>: <span class="flex-1 bg-neutral-500 h-3 rounded-full inline-block ml-2"></span>
+                                <span class="bg-blue-400 h-3 w-14 rounded-full inline-block mr-0.5"></span>: <span
+                                    class="flex-1 bg-neutral-500 h-3 rounded-full inline-block ml-2"></span>
                             </div>
                             <div class="w-full h-3 bg-neutral-500 rounded-full mt-1"></div>
                             <div class="w-64 h-3 bg-neutral-500 rounded-full mt-2"></div>
                         </div>
                         <div>
                             <div class="flex items-center">
-                                <span class="bg-purple-400 h-3 w-32 rounded-full inline-block mr-0.5"></span>: <span class="flex-1 bg-neutral-500 h-3 rounded-full inline-block ml-2"></span>
+                                <span class="bg-purple-400 h-3 w-32 rounded-full inline-block mr-0.5"></span>: <span
+                                    class="flex-1 bg-neutral-500 h-3 rounded-full inline-block ml-2"></span>
                             </div>
                             <div class="w-36 h-3 bg-neutral-500 rounded-full mt-2"></div>
                         </div>
                         <div>
-                            <span class="bg-orange-400 h-3 w-16 rounded-full inline-block mr-0.5"></span>: <span class="w-24 bg-neutral-500 h-3 rounded-full inline-block ml-2"></span>
+                            <span class="bg-orange-400 h-3 w-16 rounded-full inline-block mr-0.5"></span>: <span
+                                class="w-24 bg-neutral-500 h-3 rounded-full inline-block ml-2"></span>
                         </div>
                         <div>
-                            <span class="bg-green-400 h-3 w-10 rounded-full inline-block mr-0.5"></span>: <span class="w-32 bg-neutral-500 h-3 rounded-full inline-block ml-2"></span>
+                            <span class="bg-green-400 h-3 w-10 rounded-full inline-block mr-0.5"></span>: <span
+                                class="w-32 bg-neutral-500 h-3 rounded-full inline-block ml-2"></span>
                         </div>
                         <div>
-                            <span class="bg-amber-400 h-3 w-12 rounded-full inline-block mr-0.5"></span>: <span class="w-10 bg-neutral-500 h-3 rounded-full inline-block ml-2"></span>
+                            <span class="bg-amber-400 h-3 w-12 rounded-full inline-block mr-0.5"></span>: <span
+                                class="w-10 bg-neutral-500 h-3 rounded-full inline-block ml-2"></span>
                         </div>
                     </div>
                     <div class="px-4 py-2 space-y-2">
                         <input type="text"
-                        class="border border-neutral-500 placeholder:text-neutral-400 placeholder:font-medium bg-transparent rounded-s-md pl-3 py-2 focus:outline-none w-full"
-                        placeholder="Send a message">
+                            class="border border-neutral-500 placeholder:text-neutral-400 placeholder:font-medium bg-transparent rounded-s-md pl-3 py-2 focus:outline-none w-full"
+                            placeholder="Send a message">
                         <div class="flex justify-between">
                             <div class="flex items-center">
                                 <i class="pi pi-bolt text-[#bf94ff]"></i>
@@ -189,8 +204,8 @@ function onThumbnailSelect(e) {
                             <div class="flex items-center gap-2">
                                 <i class="pi pi-cog"></i>
                                 <button
-                                class="flex gap-2 justify-center items-center bg-[#772CE8] py-1.5 px-3 text-nowrap font-medium text-sm rounded-md">
-                                Chat</button>
+                                    class="flex gap-2 justify-center items-center bg-[#772CE8] py-1.5 px-3 text-nowrap font-medium text-sm rounded-md">
+                                    Chat</button>
                             </div>
                         </div>
                     </div>
@@ -204,16 +219,12 @@ function onThumbnailSelect(e) {
                 class="inline-flex justify-center items-center gap-2 bg-neutral-700 text-white aspect-square h-[25px] rounded-full font-bold text-sm">
                 <i class="pi pi-ellipsis-h !text-sm"></i>
             </button>
-            , this button <button
+            or this button <button
                 class="inline-flex justify-center items-center gap-2 bg-neutral-700 text-white aspect-square h-[25px] rounded-full font-bold text-sm">
                 <i class="pi pi-ellipsis-v !text-sm"></i>
-            </button> or this button
-            <button
-                class="inline-flex justify-center items-center gap-2 bg-neutral-700 text-white aspect-square h-[25px] rounded-full font-bold text-sm">
-                <i class="pi pi-bars !text-sm"></i>
             </button>
             to open this menu.<br>
-            Further you can edit the Title, the amount of subscribers and the amount of likes directly in inside the
+            Further you can edit the Title, the amount of viewers, the timestamp and the name of the streamer in inside the
             mockup.
         </p>
         <div class="flex flex-col gap-2">
