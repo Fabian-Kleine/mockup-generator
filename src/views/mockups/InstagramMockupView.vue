@@ -5,7 +5,7 @@ import InputText from 'primevue/inputtext';
 import ToggleSwitch from 'primevue/toggleswitch';
 import FileUpload from 'primevue/fileupload';
 import Select from 'primevue/select';
-import downloadCapture from '../lib/utils';
+import downloadCapture from '../../lib/utils';
 
 const background = ref("gradient");
 const hidePhone = ref(false);

@@ -6,7 +6,7 @@ import ColorPicker from 'primevue/colorpicker';
 import Select from 'primevue/select';
 import Slider from 'primevue/slider';
 import FileUpload from 'primevue/fileupload';
-import downloadCapture from '../lib/utils';
+import downloadCapture from '../../lib/utils';
 
 const background = ref("dark");
 const gradientColors = reactive({
