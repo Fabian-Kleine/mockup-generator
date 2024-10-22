@@ -20,8 +20,8 @@ import BrowserMockupView from './views/mockups/BrowserMockupView.vue'
 import WindowMockupView from './views/mockups/WindowMockupView.vue'
 import InstagramMockupView from './views/mockups/InstagramMockupView.vue'
 import TiktokMockupView from './views/mockups/TiktokMockupView.vue'
-import SpotifyView from './views/mockups/SpotifyView.vue'
-import SpotifyDesktopView from './views/mockups/SpotifyDesktopView.vue'
+import SpotifyMockupView from './views/mockups/SpotifyMockupView.vue'
+import SpotifyDesktopMockupView from './views/mockups/SpotifyDesktopMockupView.vue'
 import CallMockupView from './views/mockups/CallMockupView.vue'
 import TwitchMockupView from './views/mockups/TwitchMockupView.vue'
 
@@ -38,8 +38,8 @@ const routes = [
     { path: '/window', component: WindowMockupView },
     { path: '/instagram', component: InstagramMockupView },
     { path: '/tiktok', component: TiktokMockupView },
-    { path: '/spotify', component: SpotifyView },
-    { path: '/spotify-desktop', component: SpotifyDesktopView },
+    { path: '/spotify', component: SpotifyMockupView },
+    { path: '/spotify-desktop', component: SpotifyDesktopMockupView },
     { path: '/call', component: CallMockupView },
     { path: '/twitch', component: TwitchMockupView }
 ]
