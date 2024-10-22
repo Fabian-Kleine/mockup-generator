@@ -9,7 +9,7 @@ import ToggleSwitch from 'primevue/toggleswitch';
 import downloadCapture from '../../lib/utils';
 
 const background = ref("dark");
-const image = ref("/spotify_default_cover.png");
+const image = ref("./spotify_default_cover.png");
 const name = ref("Name");
 const playlistName = ref("Playlist");
 const darkmode = ref(false);
@@ -67,8 +67,8 @@ function onImageSelect(e) {
             <div class="space-y-2 mt-4 w-full">
                 <FileUpload :chooseButtonProps="{ class: 'flex-1' }" mode="basic" accept="image/*"
                     @select="onImageSelect" chooseLabel="Upload Image" />
-                <Button class="w-full" v-if="image != '/spotify_default_cover.png'" label="Remove Image"
-                    severity="danger" @click="image = '/spotify_default_cover.png'" />
+                <Button class="w-full" v-if="image != './spotify_default_cover.png'" label="Remove Image"
+                    severity="danger" @click="image = './spotify_default_cover.png'" />
             </div>
             <div class="flex items-center mt-4">
                 <ToggleSwitch v-model="darkmode" inputId="darkmode" />

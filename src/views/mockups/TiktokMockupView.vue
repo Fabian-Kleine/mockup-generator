@@ -9,7 +9,7 @@ import downloadCapture from '../../lib/utils';
 
 const background = ref("dark");
 const hidePhone = ref(false);
-const proiflePicture = ref("/x_placeholder.png");
+const proiflePicture = ref("./x_placeholder.png");
 const image = ref("");
 const name = ref("Name");
 const description = ref("");
@@ -70,8 +70,8 @@ function onImageSelect(e) {
             <div class="space-y-2 mt-4 w-full">
                 <FileUpload :chooseButtonProps="{ class: 'flex-1' }" mode="basic" accept="image/*" @select="onSelect"
                     chooseLabel="Upload Profile Picture" />
-                <Button class="w-full" v-if="proiflePicture != '/x_placeholder.png'" label="Remove Profile Picture"
-                    severity="danger" @click="proiflePicture = '/x_placeholder.png'" />
+                <Button class="w-full" v-if="proiflePicture != './x_placeholder.png'" label="Remove Profile Picture"
+                    severity="danger" @click="proiflePicture = './x_placeholder.png'" />
             </div>
             <div class="space-y-2 mt-4 w-full">
                 <FileUpload :chooseButtonProps="{ class: 'flex-1' }" mode="basic" accept="image/*"
