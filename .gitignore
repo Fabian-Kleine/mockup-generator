@@ -27,4 +27,5 @@ dist-ssr
 .devenv*
 devenv.local.nix
 .direnv*
+devenv.lock
 ###< frosh/devenv-meta ###
