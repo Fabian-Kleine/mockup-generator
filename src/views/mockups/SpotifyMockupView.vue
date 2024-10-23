@@ -116,12 +116,12 @@ function onImageSelect(e) {
                             <img :src="image" alt="Playlist Image" class="w-full h-full object-cover">
                         </div>
                         <div class="w-full px-4 mt-2">
-                            <h2 class="font-bold text-xl mb-2">{{ playlistName }}</h2>
+                            <h2 class="font-bold text-xl mb-2 break-words line-clamp-1">{{ playlistName }}</h2>
                             <div class="flex gap-2 items-center">
                                 <div class="w-5 h-5 rounded-full overflow-hidden">
                                     <img :src="proiflePicture" alt="Profile Picture" class="w-full h-full object-cover">
                                 </div>
-                                <span class="font-bold text-sm">{{ name }}</span>
+                                <span class="font-bold text-sm break-words line-clamp-1">{{ name }}</span>
                             </div>
                             <span class="text-neutral-400 font-medium text-sm focus:outline-none" contenteditable>2 h 35
                                 m</span>

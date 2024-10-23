@@ -102,7 +102,7 @@ function onImageSelect(e) {
                 <div :style="image ? { 'background-image': `url(${image})` } : {}"
                     class="rounded-[2rem] overflow-hidden w-[272px] h-[572px] flex flex-col justify-end bg-center bg-cover bg-neutral-700">
                     <div class="flex justify-between items-end mx-3 my-4">
-                        <div class="flex-1 mb-2">
+                        <div class="flex-1 mb-2 max-w-[75%]">
                             <h2 class="text-lg line-clamp-1 font-bold [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)]">{{ name }}</h2>
                             <p class="break-words line-clamp-2 [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)]">{{ description }}</p>
                         </div>

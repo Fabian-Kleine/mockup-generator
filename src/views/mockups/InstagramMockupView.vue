@@ -136,7 +136,7 @@ function onImageSelect(e) {
                         </div>
                         <i class="pi pi-bookmark"></i>
                     </div>
-                    <span class="w-full text-sm px-2 truncate">{{ description }}</span>
+                    <p class="w-full text-sm px-2 line-clamp-2 break-words text-overflow-ellipsis">{{ description }}</p>
                     <span class="text-neutral-500 text-sm px-2 focus:outline-none" contenteditable>5 days ago</span>
                     <div class="flex justify-between items-center px-3 py-4 mt-2">
                         <div class="flex items-center gap-2">

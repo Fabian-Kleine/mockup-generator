@@ -125,9 +125,9 @@ function addMessage(action) {
                             <i class="pi pi-ellipsis-v"></i>
                         </div>
                     </div>
-                    <div class="flex-1 px-4 text-black space-y-2 my-2 overflow-y-hidden">
+                    <div class="flex-1 flex flex-col justify-end px-4 text-black space-y-2 mb-2 overflow-y-hidden">
                         <template v-for="message in messages">
-                            <div class="ml-auto rounded-lg rounded-tr-none my-1 p-2 text-sm bg-green-300 flex flex-col relative speech-bubble-right"
+                            <div class="ml-auto w-full rounded-lg rounded-tr-none my-1 p-2 text-sm bg-green-300 flex flex-col relative speech-bubble-right"
                                 v-if="message.action == 'sent'">
                                 <p class="break-all">{{ message.text }}
                                 </p>
@@ -137,7 +137,7 @@ function addMessage(action) {
                                         minute: "2-digit"
                                     }).format(new Date(message.time)) }}</p>
                             </div>
-                            <div class="mr-auto rounded-lg rounded-tl-none my-1 p-2 text-sm bg-white flex flex-col relative speech-bubble-left"
+                            <div class="mr-auto w-full rounded-lg rounded-tl-none my-1 p-2 text-sm bg-white flex flex-col relative speech-bubble-left"
                                 v-if="message.action == 'recieved'">
                                 <p class="break-all">{{ message.text }}</p>
                                 <p class="text-gray-600 text-xs text-right leading-none">{{ new

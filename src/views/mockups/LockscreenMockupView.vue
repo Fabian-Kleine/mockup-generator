@@ -202,7 +202,7 @@ function onNotifIconSelect(e) {
                                         </div>
                                         <div class="flex-1 max-w-[80%]">
                                             <span class="block text-sm font-bold truncate">{{ notification.title }}</span>
-                                            <p class="text-sm break-words">{{ notification.text }}</p>
+                                            <p class="text-sm break-words line-clamp-3">{{ notification.text }}</p>
                                         </div>
                                     </div>
                                 </template>

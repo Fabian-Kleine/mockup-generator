@@ -108,7 +108,7 @@ function onImageSelect(e) {
                                 :class="['relative w-3 h-3 rounded-full', darkmode ? 'bg-yellow-400' : 'bg-yellow-500']"></span><span
                                 :class="['relative w-3 h-3 rounded-full', darkmode ? 'bg-green-400' : 'bg-green-500']"></span></div>
                         <div
-                            :class="['py-1 text-center w-[175px] md:w-[300px] xl:w-[400px] rounded-sm text-xs md:text-base overflow-hidden', darkmode ? 'text-white' : 'text-black']">
+                            :class="['py-1 text-center w-[175px] md:w-[300px] xl:w-[400px] rounded-sm text-xs md:text-base overflow-hidden line-clamp-1', darkmode ? 'text-white' : 'text-black']">
                             {{ url }}</div>
                         <div class="block invisible px-2 w-9"></div>
                     </div>
