@@ -2,17 +2,16 @@
     <div class="flex lg:flex-row flex-col gap-4">
         <div class="flex-1 flex items-center justify-center">
             <div class="p-6 pt-12 lg:p-12 lg:px-20">
-                <h1
-                    class="text-3xl lg:text-5xl font-bold text-surface-900 dark:text-surface-0 mb-4 lg:leading-normal text-center lg:text-left">
+                <h1 data-text="Mockup Creator"
+                    class="relative z-10 text-4xl lg:text-7xl font-bold lg:leading-normal text-center lg:text-left neon-glow bg-gradient-to-br from-cyan-300 to-purple-400 text-transparent bg-clip-text">
                     Mockup Creator
                 </h1>
-                <p class="text-surface-700 dark:text-surface-200 leading-normal text-center lg:text-left invisible h-2">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua.
+                <p class="text-white text-xl mt-2 mb-4 leading-normal text-center lg:text-left">
+                    Create stunning mockups effortlessly—social posts, videos, and more, in minutes.
                 </p>
                 <div class="flex items-center justify-center lg:justify-start gap-6">
                     <Button as="a" href="#mockups" label="All Mockups" type="button" />
-                    <Button as="router-link" to="/browser" label="Browser Mockups" type="button" outlined />
+                    <Button as="router-link" to="/browser" label="Browser Mockup" type="button" outlined />
                 </div>
             </div>
         </div>
