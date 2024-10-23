@@ -111,8 +111,8 @@ function onImageSelect(e) {
                                 <img :src="image" alt="Playlist Image" class="w-full h-full object-cover">
                             </div>
                             <div class="flex-1">
-                                <h2 class="font-bold text-6xl mb-1 text-white py-2 text-nowrap max-w-7xl">{{ playlistName }}</h2>
-                                <span class="text-neutral-500 font-medium"><span class="font-bold text-white">{{ name
+                                <h2 class="font-bold text-6xl mb-1 text-white py-2 text-nowrap max-w-2xl truncate">{{ playlistName }}</h2>
+                                <span class="text-neutral-500 font-medium"><span class="font-bold text-white inline-block max-w-sm truncate align-middle">{{ name
                                         }}</span> • <span class="foucs:outline-none" contenteditable>118</span> Songs
                                     <span class="foucs:outline-none" contenteditable>6 h 23 m</span></span>
                             </div>

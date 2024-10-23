@@ -118,8 +118,8 @@ function onPhoneBgSelect(e) {
                     :style="phoneBg ? { 'background-image': `url(${phoneBg})` } : { 'background-image': 'linear-gradient(to top, #061f3e, #5b489f, #449299)' }">
                     <div class="flex-1 flex justify-start items-center flex-col pt-10 gap-2">
                         <h4 class="text-sm mb-4">Incoming call</h4>
-                        <h2 class="font-medium text-3xl">{{ name }}</h2>
-                        <h3 class="text-sm">{{ phoneNumber }}</h3>
+                        <h2 class="font-medium text-3xl text-center line-clamp-1 px-2">{{ name }}</h2>
+                        <h3 class="text-sm line-clamp-1 px-2 text-center">{{ phoneNumber }}</h3>
                         <div class="w-16 h-16 rounded-full overflow-hidden">
                             <img :src="proiflePicture" alt="Profile Picture" class="w-full h-full object-cover">
                         </div>
