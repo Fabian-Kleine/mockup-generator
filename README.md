@@ -1,5 +1,52 @@
-# Vue 3 + Vite
+# Mockup Generator
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+A web application for creating mockups for various use cases.
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+## Table of Contents
+
+* [Introduction](#introduction)
+* [System Requirements](#system-requirements)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Features](#features)
+
+## Introduction
+
+The Mockup Generator is a web application that allows you to create mockups for various use cases. The application uses Vue.js as the frontend framework and Tailwind CSS for styling.
+
+## System Requirements
+
+* A modern web browser (e.g. Google Chrome, Mozilla Firefox)
+* A local installaton of [Node.js](https://nodejs.org)
+* A device with internet connection
+
+## Local Installation
+
+```bash
+git clone git@gitlab.rhiem-intermedia.de:fabian.kleine/mockup-generator.git 
+
+cd mockup-generator
+```
+
+### Run development server
+```bash
+npm run dev
+```
+
+### Run on production
+```bash
+npm run build
+```
+After running the build command you can host the created files from the `dist` folder on a webserver.
+
+## Usage
+
+1. Open the application in the web browser.
+2. Select the desired view to create a mockup.
+3. Customize the mockup's.
+4. Save the mockup as an image.
+
+## Features
+
+* Create mockups for various use cases (e.g. phone, lock screen, YouTube)
+* Customize the mockup's design
