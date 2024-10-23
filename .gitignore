@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+###> frosh/devenv-meta ###
+.devenv*
+devenv.local.nix
+.direnv*
+###< frosh/devenv-meta ###
