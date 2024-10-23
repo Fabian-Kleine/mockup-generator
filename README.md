@@ -6,7 +6,8 @@ A web application for creating mockups for various use cases.
 
 * [Introduction](#introduction)
 * [System Requirements](#system-requirements)
-* [Installation](#installation)
+* [Local Installation](#local-installation)
+* [NixOS Installation](#nixos-installation)
 * [Usage](#usage)
 * [Features](#features)
 
@@ -38,6 +39,16 @@ npm run dev
 npm run build
 ```
 After running the build command you can host the created files from the `dist` folder on a webserver.
+
+## NixOS Installation
+
+```bash
+git clone git@gitlab.rhiem-intermedia.de:fabian.kleine/mockup-generator.git 
+
+cd mockup-generator
+
+direnv allow
+```
 
 ## Usage
 
