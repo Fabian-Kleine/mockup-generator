@@ -72,28 +72,57 @@ html, body {
   border-radius: 2rem;
 }
 
+.neon-glow {
+  background-size: 150%;
+  animation: neon-background 2s linear infinite alternate;
+}
+
+@keyframes neon-background {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
 .neon-glow::before {
   content: attr(data-text);
   color: transparent;
   position: absolute;
   z-index: -1;
-  animation: neon 3s infinite linear;
+  animation: neon 7s linear infinite;
 }
 
 @keyframes neon {
   0% {
-    text-shadow: -3px -3px 30px #0fe7ff, 3px 3px 30px #db0eff;
+    text-shadow: 0px -4px #0fe7ff, 0px 4px #db0eff;
+    filter: blur(20px);
+  }
+  12.5% {
+    text-shadow: 2.8px -2.8px #0fe7ff, -2.8px 2.8px #db0eff;
   }
   25% {
-    text-shadow: 3px -3px 30px #0fe7ff, -3px 3px 30px #db0eff;
+    text-shadow: 4px 0px #0fe7ff, -4px 0px #db0eff;
+  }
+  37.5% {
+    text-shadow: 2.8px 2.8px #0fe7ff, -2.8px -2.8px #db0eff;
   }
   50% {
-    text-shadow: 3px 3px 30px #0fe7ff, -3px -3px 30px #db0eff;
+    text-shadow: 0px 4px #0fe7ff, 0px -4px #db0eff;
+    filter: blur(10px);
+  }
+  62.5% {
+    text-shadow: -2.8px 2.8px #0fe7ff, 2.8px -2.8px #db0eff;
   }
   75% {
-    text-shadow: -3px 3px 30px #0fe7ff, 3px -3px 30px #db0eff;
+    text-shadow: -4px 0px #0fe7ff, 4px 0px #db0eff;
+  }
+  87.5% {
+    text-shadow: -2.8px -2.8px #0fe7ff, 2.8px 2.8px #db0eff;
   }
   100% {
-    text-shadow: -3px -3px 30px #0fe7ff, 3px 3px 30px #db0eff;
+    text-shadow: 0px -4px #0fe7ff, 0px 4px #db0eff;
+    filter: blur(20px);
   }
 }
