@@ -46,7 +46,7 @@ function onDesktopBgSelect(e) {
 <template>
     <div class="w-full min-h-screen block xl:grid grid-cols-4 gap-4">
         <div class="flex flex-col gap-4 mt-4 px-4 mb-10 xl:mb-0">
-            <h2 class="text-xl font-bold">Edit Phone Mockup</h2>
+            <h2 class="text-xl font-bold">Edit Desktop Mockup</h2>
             <IftaLabel>
                 <Select inputId="background" v-model="background" :options="backgroundOptions" optionLabel="color"
                     optionValue="value" placeholder='Select a Background' class="w-full" />
