@@ -71,3 +71,29 @@ html, body {
   backdrop-filter: var(--custom-blur);
   border-radius: 2rem;
 }
+
+.neon-glow::before {
+  content: attr(data-text);
+  color: transparent;
+  position: absolute;
+  z-index: -1;
+  animation: neon 3s infinite linear;
+}
+
+@keyframes neon {
+  0% {
+    text-shadow: -3px -3px 30px #0fe7ff, 3px 3px 30px #db0eff;
+  }
+  25% {
+    text-shadow: 3px -3px 30px #0fe7ff, -3px 3px 30px #db0eff;
+  }
+  50% {
+    text-shadow: 3px 3px 30px #0fe7ff, -3px -3px 30px #db0eff;
+  }
+  75% {
+    text-shadow: -3px 3px 30px #0fe7ff, 3px -3px 30px #db0eff;
+  }
+  100% {
+    text-shadow: -3px -3px 30px #0fe7ff, 3px 3px 30px #db0eff;
+  }
+}
