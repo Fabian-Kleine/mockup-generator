@@ -34,5 +34,5 @@ export default async function downloadCapture(filename) {
     capture.style.height = 'auto';
     capture.style.maxHeight = 'none';
     if (!capture.children[1]) return;
-    capture.children[1].style.display = 'inherit';
+    capture.children[1].style.display = null;
 }
