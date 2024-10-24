@@ -180,7 +180,7 @@ function onImageSelect(e) {
                     </div>
                 </div>
             </div>
-            <div v-if="background != 'none'"
+            <div v-if="background != 'none' && background != 'desktop'"
                 :class="['absolute bottom-10 left-10 w-14 h-14 rounded-full flex justify-center items-center', background == 'green' ? 'bg-black' : 'bg-[#1db954]', background == 'desktop' ? 'bottom-20' : '']">
                 <svg width="24" height="24"
                     :style="{ 'fill': background == 'white' ? 'white' : background == 'green' ? '#1db954' : 'black' }"
