@@ -87,7 +87,7 @@ function onImageSelect(e) {
                 <Button class="flex-1" label="Download" @click="downloadCapture('spotify-mockup.png')" />
             </div>
         </div>
-        <div :class="['relative col-span-3 flex justify-center items-center max-h-screen', background == 'white' ? 'bg-white' : '', background == 'desktop' ? 'bg-[url(/macos.png)] bg-contain bg-no-repeat bg-center' : background == 'green' ? 'bg-[#1db954]' : '']"
+        <div :class="['relative col-span-3 flex justify-center items-center max-h-screen', background == 'white' ? 'bg-white' : '', background == 'desktop' ? 'bg-[url(/macos.png)] bg-contain bg-no-repeat bg-center capture-container-desktop' : background == 'green' ? 'bg-[#1db954]' : '', background != 'none' && background != 'desktop' ? 'capture-container' : '']"
             :id="background != 'none' ? 'capture' : ''">
             <div :id="background == 'none' ? 'capture' : ''"
                 :class="['rounded-2xl overflow-hidden shadow-black/40 h-[500px] w-11/12 xl:w-2/3 shadow-[0_25px_50px_0_rgb(0_0_0_/_0.35)] bg-black']">
