@@ -98,7 +98,7 @@ function addMessage(action) {
                 <Button class="flex-1" label="Download" @click="downloadCapture('whatsapp-mockup.png')" />
             </div>
         </div>
-        <div :class="['relative col-span-3 flex justify-center items-center min-h-[800px]', background == 'white' ? 'bg-white' : background == 'green' ? 'bg-[#25D366]' : '']"
+        <div :class="['capture-container relative col-span-3 flex justify-center items-center min-h-[800px]', background == 'white' ? 'bg-white' : background == 'green' ? 'bg-[#25D366]' : '']"
             :id="background == 'green' || background == 'white' ? 'capture' : ''">
             <div
                 :class="['relative rounded-[2.5rem]', , background == 'green' || background == 'white' ? 'shadow-2xl' : '', !hidePhone ? 'border-neutral-800 bg-neutral-800 border-[14px] h-[600px] w-[300px]' : '']" :id="background != 'green' && background != 'white' ? 'capture' : ''">

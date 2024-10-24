@@ -87,7 +87,7 @@ function onImageSelect(e) {
                 <Button class="flex-1" label="Download" @click="downloadCapture('instagram-mockup.png')" />
             </div>
         </div>
-        <div :class="['relative col-span-3 flex justify-center items-center min-h-[800px]', background == 'white' ? 'bg-white' : background == 'gradient' ? 'bg-instagram-gradient' : '']"
+        <div :class="['capture-container relative col-span-3 flex justify-center items-center min-h-[800px]', background == 'white' ? 'bg-white' : background == 'gradient' ? 'bg-instagram-gradient' : '']"
             :id="background != 'none' ? 'capture' : ''">
             <div :class="['relative rounded-[2.5rem]', , background == 'green' || background == 'white' ? 'shadow-2xl' : '', !hidePhone ? 'border-neutral-800 bg-neutral-800 border-[14px] h-[600px] w-[300px]' : '']"
                 :id="background == 'none' ? 'capture' : ''">

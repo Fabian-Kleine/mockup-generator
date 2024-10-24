@@ -22,7 +22,7 @@ function onThumbnailSelect(e) {
 </script>
 
 <template>
-    <div class="pb-4 bg-[#0E0E10] h-screen flex flex-col" id="capture">
+    <div class="capture-container-video pb-4 bg-[#0E0E10] h-screen flex flex-col" id="capture">
         <nav class="w-full flex justify-between gap-2 px-3 py-1.5 bg-[#18181B] border-b border-black"
             v-if="!hideNavbar">
             <div class="w-42 flex items-center gap-4 md:gap-8">

@@ -74,7 +74,7 @@ function onSelect(e) {
             </div>
         </div>
         <div
-            :class="['relative col-span-3 flex justify-center items-center min-h-[800px]', background == 'white' ? 'bg-white' : background == 'blue' ? 'bg-[#1DA1F2]' : '']" :id="background == 'white' || background == 'blue' ? 'capture' : ''">
+            :class="['capture-container relative col-span-3 flex justify-center items-center min-h-[800px]', background == 'white' ? 'bg-white' : background == 'blue' ? 'bg-[#1DA1F2]' : '']" :id="background == 'white' || background == 'blue' ? 'capture' : ''">
             <div :class="['bg-white p-4 rounded-border w-[600px]', background == 'white' || background == 'blue' ? 'shadow-2xl' : '']"
                 :id="background != 'white' && background != 'blue' ? 'capture' : ''">
                 <div class="flex justify-between mb-4">
