@@ -4,7 +4,7 @@ import { ref } from 'vue';
 import FileUpload from 'primevue/fileupload';
 import ToggleSwitch from 'primevue/toggleswitch';
 import { RouterLink } from 'vue-router';
-import downloadCapture from '../../lib/utils';
+import EditorSidebar from '../../components/EditorSidebar.vue';
 
 const editDialogVisible = ref(true);
 const proiflePicture = ref("./x_placeholder.png");
@@ -211,7 +211,7 @@ function onThumbnailSelect(e) {
             </div>
         </div>
     </div>
-    <Drawer v-model:visible="editDialogVisible" header="Edit Mockup" :style="{ width: '35rem' }">
+    <EditorSidebar drawer v-model:drawerOpen="editDialogVisible" header="Edit Mockup" downloadFilename="twitch-mockup.png">
         <p class="mb-6">
             Click this button <button
                 class="inline-flex justify-center items-center gap-2 bg-neutral-700 text-white aspect-square h-[25px] rounded-full font-bold text-sm">
@@ -246,10 +246,6 @@ function onThumbnailSelect(e) {
                 <ToggleSwitch v-model="hideNavbar" inputId="hideNavbar" />
                 <label for="hideNavbar" class="ml-2"> Hide Navbar </label>
             </div>
-            <div class="flex justify-end gap-2 mt-4">
-                <Button as="router-link" label="Cancel" severity="secondary" to="/" />
-                <Button label="Download" @click="downloadCapture('twitch-mockup.png')" />
-            </div>
         </div>
-    </Drawer>
+    </EditorSidebar>
 </template>

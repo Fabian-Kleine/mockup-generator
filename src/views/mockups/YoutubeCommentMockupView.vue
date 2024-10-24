@@ -3,7 +3,8 @@ import { ref } from 'vue';
 import IftaLabel from 'primevue/iftalabel';
 import FileUpload from 'primevue/fileupload';
 import Select from 'primevue/select';
-import downloadCapture from '../../lib/utils';
+import EditorLayout from '../../components/EditorLayout.vue';
+import EditorSidebar from '../../components/EditorSidebar.vue';
 
 const background = ref("dark");
 const proiflePicture = ref("./x_placeholder.png");
@@ -29,9 +30,8 @@ function onSelect(e) {
 </script>
 
 <template>
-    <div class="w-full min-h-screen block xl:grid grid-cols-4 gap-4">
-        <div class="flex flex-col gap-4 mt-4 px-4 edit-tweet mb-10 xl:mb-0">
-            <h2 class="text-xl font-bold">Edit YouTube Comment Mockup</h2>
+    <EditorLayout>
+        <EditorSidebar header="Edit YouTube Comment Mockup" downloadFilename="youtube-comment-mockup.png">
             <p>
                 Click on a text to edit it.
             </p>
@@ -46,11 +46,7 @@ function onSelect(e) {
                 <Button class="w-full" v-if="proiflePicture != './x_placeholder.png'" label="Remove Profile Picture" severity="danger"
                     @click="proiflePicture = './x_placeholder.png'" />
             </div>
-            <div class="flex gap-2 mt-4">
-                <Button as="router-link" class="flex-1" label="Cancel" severity="secondary" to="/" />
-                <Button class="flex-1" label="Download" @click="downloadCapture('youtube-comment-mockup.png')" />
-            </div>
-        </div>
+        </EditorSidebar>
         <div :class="['capture-container relative col-span-3 flex justify-center items-center min-h-[800px]', background != 'dark' ? 'bg-white' : '']"
             :id="background == 'dark' || background == 'light' ? 'capture' : ''">
             <div :class="['bg-neutral-800 p-4 rounded-border w-[600px]', background == 'dark' || background == 'light' ? 'shadow-2xl' : '']"
@@ -93,5 +89,5 @@ function onSelect(e) {
                 <i class="pi pi-youtube !text-2xl"></i>
             </div>
         </div>
-    </div>
+    </EditorLayout>
 </template>

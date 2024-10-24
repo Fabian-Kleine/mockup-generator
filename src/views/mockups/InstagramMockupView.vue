@@ -5,7 +5,8 @@ import InputText from 'primevue/inputtext';
 import ToggleSwitch from 'primevue/toggleswitch';
 import FileUpload from 'primevue/fileupload';
 import Select from 'primevue/select';
-import downloadCapture from '../../lib/utils';
+import EditorLayout from '../../components/EditorLayout.vue';
+import EditorSidebar from '../../components/EditorSidebar.vue';
 
 const background = ref("gradient");
 const hidePhone = ref(false);
@@ -44,9 +45,8 @@ function onImageSelect(e) {
 </script>
 
 <template>
-    <div class="w-full min-h-screen block xl:grid grid-cols-4 gap-4">
-        <div class="flex flex-col gap-4 mt-4 px-4 edit-tweet mb-10 xl:mb-0">
-            <h2 class="text-xl font-bold">Edit Instagram Post Mockup</h2>
+    <EditorLayout>
+        <EditorSidebar header="Edit Instagram Post Mockup" downloadFilename="instagram-mockup.png">
             <p>
                 Click on the numbers or "5 days ago" text to edit it.
             </p>
@@ -82,11 +82,7 @@ function onImageSelect(e) {
                     @select="onImageSelect" chooseLabel="Upload Post Image" />
                 <Button class="w-full" v-if="image" label="Remove Post Image" severity="danger" @click="image = ''" />
             </div>
-            <div class="flex gap-2 mt-4">
-                <Button as="router-link" class="flex-1" label="Cancel" severity="secondary" to="/" />
-                <Button class="flex-1" label="Download" @click="downloadCapture('instagram-mockup.png')" />
-            </div>
-        </div>
+        </EditorSidebar>
         <div :class="['capture-container relative col-span-3 flex justify-center items-center min-h-[800px]', background == 'white' ? 'bg-white' : background == 'gradient' ? 'bg-instagram-gradient' : '']"
             :id="background != 'none' ? 'capture' : ''">
             <div :class="['relative rounded-[2.5rem]', , background == 'green' || background == 'white' ? 'shadow-2xl' : '', !hidePhone ? 'border-neutral-800 bg-neutral-800 border-[14px] h-[600px] w-[300px]' : '']"
@@ -159,5 +155,5 @@ function onImageSelect(e) {
                     :class="['pi pi-instagram !text-2xl', background == 'gradient' ? 'bg-clip-text text-transparent bg-instagram-gradient' : '']"></i>
             </div>
         </div>
-    </div>
+    </EditorLayout>
 </template>

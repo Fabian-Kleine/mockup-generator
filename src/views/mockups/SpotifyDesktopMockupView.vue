@@ -6,7 +6,8 @@ import ColorPicker from 'primevue/colorpicker';
 import Select from 'primevue/select';
 import FileUpload from 'primevue/fileupload';
 import ToggleSwitch from 'primevue/toggleswitch';
-import downloadCapture from '../../lib/utils';
+import EditorLayout from '../../components/EditorLayout.vue';
+import EditorSidebar from '../../components/EditorSidebar.vue';
 
 const background = ref("dark");
 const image = ref("./spotify_default_cover.png");
@@ -47,9 +48,8 @@ function onImageSelect(e) {
 </script>
 
 <template>
-    <div class="w-full min-h-screen block xl:grid grid-cols-4 gap-4">
-        <div class="flex flex-col gap-4 mt-4 px-4 mb-10 xl:mb-0">
-            <h2 class="text-xl font-bold">Edit Spotify Playlist Mockup</h2>
+    <EditorLayout>
+        <EditorSidebar header="Edit Spotify Desktop Mockup" downloadFilename="spotify-mockup.png">
             <IftaLabel>
                 <Select inputId="background" v-model="background" :options="backgroundOptions" optionLabel="color"
                     optionValue="value" placeholder='Select a Background' class="w-full" />
@@ -82,11 +82,7 @@ function onImageSelect(e) {
                 <ColorPicker inline v-model="gradientColor" inputId="color" />
                 <label for="color">Gradient Color</label>
             </IftaLabel>
-            <div class="flex gap-2 mt-4">
-                <Button as="router-link" class="flex-1" label="Cancel" severity="secondary" to="/" />
-                <Button class="flex-1" label="Download" @click="downloadCapture('spotify-mockup.png')" />
-            </div>
-        </div>
+        </EditorSidebar>
         <div :class="['relative col-span-3 flex justify-center items-center max-h-screen', background == 'white' ? 'bg-white' : '', background == 'desktop' ? 'bg-[url(/macos.png)] bg-contain bg-no-repeat bg-center capture-container-desktop' : background == 'green' ? 'bg-[#1db954]' : '', background != 'none' && background != 'desktop' ? 'capture-container' : '']"
             :id="background != 'none' ? 'capture' : ''">
             <div :id="background == 'none' ? 'capture' : ''"
@@ -190,5 +186,5 @@ function onImageSelect(e) {
                 </svg>
             </div>
         </div>
-    </div>
+    </EditorLayout>
 </template>
