@@ -10,7 +10,8 @@ import Select from 'primevue/select';
 import Slider from 'primevue/slider';
 import FileUpload from 'primevue/fileupload';
 import ToggleSwitch from 'primevue/toggleswitch';
-import downloadCapture from '../../lib/utils';
+import EditorLayout from '../../components/EditorLayout.vue';
+import EditorSidebar from '../../components/EditorSidebar.vue';
 
 const background = ref("dark");
 const gradientColors = reactive({
@@ -73,9 +74,8 @@ function onNotifIconSelect(e) {
 </script>
 
 <template>
-    <div class="w-full min-h-screen block xl:grid grid-cols-4 gap-4">
-        <div class="flex flex-col gap-4 mt-4 px-4 mb-10 xl:mb-0">
-            <h2 class="text-xl font-bold">Edit Phone Lockscreen Mockup</h2>
+    <EditorLayout>
+        <EditorSidebar header="Edit Phone Lockscreen Mockup" downloadFilename="lockscreen-mockup.png">
             <IftaLabel>
                 <DatePicker v-model="date" fluid inputId="date" showIcon iconDisplay="input" variant="filled"
                     dateFormat="M dd, yy" />
@@ -141,11 +141,7 @@ function onNotifIconSelect(e) {
                 <Button v-if="notifications.length" class="flex-1" severity="danger" label="Remove all notifications" @click="notifications = []" />
             </div>
             <div class="h-[1px] w-full bg-neutral-500"></div>
-            <div class="flex gap-2 mt-4">
-                <Button as="router-link" class="flex-1" label="Cancel" severity="secondary" to="/" />
-                <Button class="flex-1" label="Download" @click="downloadCapture('phone-mockup.png')" />
-            </div>
-        </div>
+        </EditorSidebar>
         <div :style="background == 'linear-gradient' ? { 'background-image': `linear-gradient(${gradientAngle}deg, #${gradientColors.color1}, #${gradientColors.color2})` }
             : background == 'radial-gradient' ? { 'background-image': `radial-gradient(#${gradientColors.color1} 25%, #${gradientColors.color2})` } : {}"
             :class="['capture-container relative col-span-3 flex justify-center items-center min-h-[800px] max-h-screen', background == 'white' ? 'bg-white' : '']"
@@ -234,7 +230,7 @@ function onNotifIconSelect(e) {
                 </div>
             </div>
         </div>
-    </div>
+    </EditorLayout>
     <Dialog v-model:visible="phoneBgDialog" modal header="Select Phone Background" :style="{ width: '50%' }">
         <h3 class="text-3xl font-bold text-center"><i class="pi pi-apple !text-3xl"></i> Apple</h3>
         <div class="flex gap-3 flex-wrap justify-center">

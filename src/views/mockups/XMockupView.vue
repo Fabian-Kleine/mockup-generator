@@ -4,7 +4,8 @@ import DatePicker from 'primevue/datepicker';
 import IftaLabel from 'primevue/iftalabel';
 import FileUpload from 'primevue/fileupload';
 import Select from 'primevue/select';
-import downloadCapture from '../../lib/utils';
+import EditorLayout from '../../components/EditorLayout.vue';
+import EditorSidebar from '../../components/EditorSidebar.vue';
 
 const verified = ref(false);
 const background = ref("blue");
@@ -33,9 +34,8 @@ function onSelect(e) {
 </script>
 
 <template>
-    <div class="w-full min-h-screen block xl:grid grid-cols-4 gap-4">
-        <div class="flex flex-col gap-4 mt-4 px-4 edit-tweet mb-10 xl:mb-0">
-            <h2 class="text-xl font-bold">Edit Tweet Mockup</h2>
+    <EditorLayout>
+        <EditorSidebar header="Edit Tweet Mockup" downloadFilename="x-mockup.png">
             <p>
                 Click on a text (except time and date) to edit it.
             </p>
@@ -68,11 +68,7 @@ function onSelect(e) {
                 <Button class="w-full" v-if="proiflePicture != './x_placeholder.png'" label="Remove Profile Picture" severity="danger"
                     @click="proiflePicture = './x_placeholder.png'" />
             </div>
-            <div class="flex gap-2 mt-4">
-                <Button as="router-link" class="flex-1" label="Cancel" severity="secondary" to="/" />
-                <Button class="flex-1" label="Download" @click="downloadCapture('x-mockup.png')" />
-            </div>
-        </div>
+        </EditorSidebar>
         <div
             :class="['capture-container relative col-span-3 flex justify-center items-center min-h-[800px]', background == 'white' ? 'bg-white' : background == 'blue' ? 'bg-[#1DA1F2]' : '']" :id="background == 'white' || background == 'blue' ? 'capture' : ''">
             <div :class="['bg-white p-4 rounded-border w-[600px]', background == 'white' || background == 'blue' ? 'shadow-2xl' : '']"
@@ -133,5 +129,5 @@ function onSelect(e) {
                 <i class="pi pi-twitter !text-2xl"></i>
             </div>
         </div>
-    </div>
+    </EditorLayout>
 </template>

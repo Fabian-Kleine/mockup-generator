@@ -6,7 +6,8 @@ import ColorPicker from 'primevue/colorpicker';
 import Select from 'primevue/select';
 import Slider from 'primevue/slider';
 import FileUpload from 'primevue/fileupload';
-import downloadCapture from '../../lib/utils';
+import EditorLayout from '../../components/EditorLayout.vue';
+import EditorSidebar from '../../components/EditorSidebar.vue';
 
 const background = ref("dark");
 const gradientColors = reactive({
@@ -52,9 +53,8 @@ function onPhoneBgSelect(e) {
 </script>
 
 <template>
-    <div class="w-full min-h-screen block xl:grid grid-cols-4 gap-4">
-        <div class="flex flex-col gap-4 mt-4 px-4 mb-10 xl:mb-0">
-            <h2 class="text-xl font-bold">Edit Phone Call Mockup</h2>
+    <EditorLayout>
+        <EditorSidebar header="Edit Phone Call Mockup" downloadFilename="call-mockup.png">
             <IftaLabel>
                 <Select inputId="background" v-model="background" :options="backgroundOptions" optionLabel="color"
                     optionValue="value" placeholder='Select a Background' class="w-full" />
@@ -95,11 +95,7 @@ function onPhoneBgSelect(e) {
                 <Button class="w-full" v-if="phoneBg" label="Remove Call Background" severity="danger"
                     @click="phoneBg = ''" />
             </div>
-            <div class="flex gap-2 mt-4">
-                <Button as="router-link" class="flex-1" label="Cancel" severity="secondary" to="/" />
-                <Button class="flex-1" label="Download" @click="downloadCapture('call-mockup.png')" />
-            </div>
-        </div>
+        </EditorSidebar>
         <div :style="background == 'linear-gradient' ? { 'background-image': `linear-gradient(${gradientAngle}deg, #${gradientColors.color1}, #${gradientColors.color2})` }
             : background == 'radial-gradient' ? { 'background-image': `radial-gradient(#${gradientColors.color1} 25%, #${gradientColors.color2})` } : {}"
             :class="['capture-container relative col-span-3 flex justify-center items-center min-h-[800px] max-h-screen', background == 'white' ? 'bg-white' : '']"
@@ -148,5 +144,5 @@ function onPhoneBgSelect(e) {
                 </div>
             </div>
         </div>
-    </div>
+    </EditorLayout>
 </template>

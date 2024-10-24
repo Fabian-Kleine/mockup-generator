@@ -6,7 +6,8 @@ import InputText from 'primevue/inputtext';
 import DatePicker from 'primevue/datepicker';
 import FileUpload from 'primevue/fileupload';
 import Select from 'primevue/select';
-import downloadCapture from '../../lib/utils';
+import EditorLayout from '../../components/EditorLayout.vue';
+import EditorSidebar from '../../components/EditorSidebar.vue';
 
 const background = ref("green");
 const hidePhone = ref(false);
@@ -46,9 +47,8 @@ function addMessage(action) {
 </script>
 
 <template>
-    <div class="w-full min-h-screen block xl:grid grid-cols-4 gap-4">
-        <div class="flex flex-col gap-4 mt-4 px-4 edit-tweet mb-10 xl:mb-0">
-            <h2 class="text-xl font-bold">Edit Whatsapp Chat Mockup</h2>
+    <EditorLayout>
+        <EditorSidebar header="Edit Whatsapp Chat Mockup" downloadFilename="whatsapp-mockup.png">
             <p>
                 Click on the Name to edit it.
             </p>
@@ -93,11 +93,7 @@ function addMessage(action) {
             </div>
             <Button v-if="messages.length" severity="danger" label="Remove all messages" @click="messages=[]" />
             <div class="h-[1px] w-full bg-neutral-500"></div>
-            <div class="flex gap-2 mt-4">
-                <Button as="router-link" class="flex-1" label="Cancel" severity="secondary" to="/" />
-                <Button class="flex-1" label="Download" @click="downloadCapture('whatsapp-mockup.png')" />
-            </div>
-        </div>
+        </EditorSidebar>
         <div :class="['capture-container relative col-span-3 flex justify-center items-center min-h-[800px]', background == 'white' ? 'bg-white' : background == 'green' ? 'bg-[#25D366]' : '']"
             :id="background == 'green' || background == 'white' ? 'capture' : ''">
             <div
@@ -175,5 +171,5 @@ function addMessage(action) {
                 <i class="pi pi-whatsapp !text-2xl"></i>
             </div>
         </div>
-    </div>
+    </EditorLayout>
 </template>

@@ -7,7 +7,8 @@ import Select from 'primevue/select';
 import Slider from 'primevue/slider';
 import FileUpload from 'primevue/fileupload';
 import ToggleSwitch from 'primevue/toggleswitch';
-import downloadCapture from '../../lib/utils';
+import EditorLayout from '../../components/EditorLayout.vue';
+import EditorSidebar from '../../components/EditorSidebar.vue';
 
 const background = ref("dark");
 const gradientColors = reactive({
@@ -52,9 +53,8 @@ function onImageSelect(e) {
 </script>
 
 <template>
-    <div class="w-full min-h-screen block xl:grid grid-cols-4 gap-4">
-        <div class="flex flex-col gap-4 mt-4 px-4 mb-10 xl:mb-0">
-            <h2 class="text-xl font-bold">Edit Browser Mockup</h2>
+    <EditorLayout>
+        <EditorSidebar header="Edit Browser Mockup" downloadFilename="browser-mockup.png">
             <IftaLabel>
                 <InputText fluid id="url" v-model="url" variant="filled"
                     placeholder="Type URL..." />
@@ -89,11 +89,7 @@ function onImageSelect(e) {
                 <ToggleSwitch v-model="darkmode" inputId="darkmode" />
                 <label for="darkmode" class="ml-2"> Dark Mode </label>
             </div>
-            <div class="flex gap-2 mt-4">
-                <Button as="router-link" class="flex-1" label="Cancel" severity="secondary" to="/" />
-                <Button class="flex-1" label="Download" @click="downloadCapture('browser-mockup.png')" />
-            </div>
-        </div>
+        </EditorSidebar>
         <div :style="background == 'linear-gradient' ? { 'background-image': `linear-gradient(${gradientAngle}deg, #${gradientColors.color1}, #${gradientColors.color2})` }
             : background == 'radial-gradient' ? { 'background-image': `radial-gradient(#${gradientColors.color1} 25%, #${gradientColors.color2})` } : {}"
             :class="['relative col-span-3 flex justify-center items-center max-h-screen', background == 'white' ? 'bg-white' : '', background == 'desktop' ? 'bg-[url(/macos.png)] bg-contain bg-no-repeat bg-center capture-container-desktop' : background != 'none' ? 'capture-container' : '']"
@@ -119,5 +115,5 @@ function onImageSelect(e) {
                 </div>
             </div>
         </div>
-    </div>
+    </EditorLayout>
 </template>
