@@ -28,7 +28,7 @@ function onThumbnailSelect(e) {
 </script>
 
 <template>
-    <div class="pb-4" id="capture">
+    <div class="pb-4 capture-container-video" id="capture">
         <nav class="w-full flex justify-between gap-2 px-5 py-3" v-if="!hideNavbar">
             <div class="w-36 flex items-center gap-2 md:gap-6">
                 <i class="pi pi-bars !text-xl cursor-pointer" @click="editDialogVisible = true"></i>

@@ -51,7 +51,7 @@ function onSelect(e) {
                 <Button class="flex-1" label="Download" @click="downloadCapture('youtube-comment-mockup.png')" />
             </div>
         </div>
-        <div :class="['relative col-span-3 flex justify-center items-center min-h-[800px]', background != 'dark' ? 'bg-white' : '']"
+        <div :class="['capture-container relative col-span-3 flex justify-center items-center min-h-[800px]', background != 'dark' ? 'bg-white' : '']"
             :id="background == 'dark' || background == 'light' ? 'capture' : ''">
             <div :class="['bg-neutral-800 p-4 rounded-border w-[600px]', background == 'dark' || background == 'light' ? 'shadow-2xl' : '']"
                 :id="background != 'dark' && background != 'light' ? 'capture' : ''">
