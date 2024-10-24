@@ -7,16 +7,20 @@ export default async function downloadCapture(filename) {
     }
 
     if (capture.classList.contains('capture-container')) {
-        capture.setAttribute('style', 'width: 1436px; height: 945px;');
+        capture.style.width = '1436px';
+        capture.style.height = '945px';
+        capture.style.maxHeight = '945px';
     }
 
     if (capture.classList.contains('capture-container-desktop')) {
-        capture.setAttribute('style', 'width: 1436px; height: 800px; max-height: 800px;');
+        capture.style.width = '1436px';
+        capture.style.height = '800px';
+        capture.style.maxHeight = '800px';
     }
 
     if (capture.classList.contains('capture-container-video')) {
-        capture.setAttribute('style', 'width: 1920px;');
-        capture.children[1].setAttribute('style', 'display: grid;');
+        capture.style.width = '1920px';
+        capture.children[1].style.display = 'grid';
     }
 
     const dataUrl = await DomToImage.toPng(capture);
@@ -26,6 +30,9 @@ export default async function downloadCapture(filename) {
     link.href = dataUrl;
     link.click();
 
-    capture.removeAttribute('style');
-    capture.children[1].removeAttribute('style');
+    capture.style.width = 'auto';
+    capture.style.height = 'auto';
+    capture.style.maxHeight = 'none';
+    if (!capture.children[1]) return;
+    capture.children[1].style.display = 'inherit';
 }
