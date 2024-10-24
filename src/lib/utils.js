@@ -10,6 +10,10 @@ export default async function downloadCapture(filename) {
         capture.setAttribute('style', 'width: 1436px; height: 945px;');
     }
 
+    if (capture.classList.contains('capture-container-desktop')) {
+        capture.setAttribute('style', 'width: 1436px; height: 800px; max-height: 800px;');
+    }
+
     if (capture.classList.contains('capture-container-video')) {
         capture.setAttribute('style', 'width: 1920px;');
         capture.children[1].setAttribute('style', 'display: grid;');
