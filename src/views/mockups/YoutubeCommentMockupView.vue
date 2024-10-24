@@ -40,7 +40,12 @@ function onSelect(e) {
                     optionValue="value" placeholder='Select a Background' class="w-full" />
                 <label for="background">Background</label>
             </IftaLabel>
-            <FileUpload mode="basic" accept="image/*" @select="onSelect" chooseLabel="Upload Profile Picture" />
+            <div class="space-y-2 mt-4 w-full">
+                <FileUpload :chooseButtonProps="{ class: 'flex-1' }" mode="basic" accept="image/*" @select="onSelect"
+                    chooseLabel="Upload Profile Picture" />
+                <Button class="w-full" v-if="proiflePicture != './x_placeholder.png'" label="Remove Profile Picture" severity="danger"
+                    @click="proiflePicture = './x_placeholder.png'" />
+            </div>
             <div class="flex gap-2 mt-4">
                 <Button as="router-link" class="flex-1" label="Cancel" severity="secondary" to="/" />
                 <Button class="flex-1" label="Download" @click="downloadCapture('youtube-comment-mockup.png')" />
