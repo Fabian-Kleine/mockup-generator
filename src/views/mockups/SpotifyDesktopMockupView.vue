@@ -6,8 +6,8 @@ import ColorPicker from 'primevue/colorpicker';
 import Select from 'primevue/select';
 import FileUpload from 'primevue/fileupload';
 import ToggleSwitch from 'primevue/toggleswitch';
-import EditorLayout from '../../components/EditorLayout.vue';
-import EditorSidebar from '../../components/EditorSidebar.vue';
+import EditorLayout from '../../components/layout/EditorLayout.vue';
+import EditorSidebar from '../../components/layout/EditorSidebar.vue';
 
 const background = ref("dark");
 const image = ref("./spotify_default_cover.png");

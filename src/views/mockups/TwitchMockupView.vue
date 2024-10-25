@@ -4,7 +4,7 @@ import { ref } from 'vue';
 import FileUpload from 'primevue/fileupload';
 import ToggleSwitch from 'primevue/toggleswitch';
 import { RouterLink } from 'vue-router';
-import EditorSidebar from '../../components/EditorSidebar.vue';
+import EditorSidebar from '../../components/layout/EditorSidebar.vue';
 
 const editDialogVisible = ref(true);
 const proiflePicture = ref("./x_placeholder.png");

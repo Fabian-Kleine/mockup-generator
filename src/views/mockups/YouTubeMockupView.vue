@@ -6,7 +6,7 @@ import IftaLabel from 'primevue/iftalabel';
 import DatePicker from 'primevue/datepicker';
 import { RouterLink } from 'vue-router';
 import downloadCapture from '../../lib/utils';
-import EditorSidebar from '../../components/EditorSidebar.vue';
+import EditorSidebar from '../../components/layout/EditorSidebar.vue';
 
 const recommendedVideosLength = Array.from({ length: 8 });
 const editDialogVisible = ref(true);

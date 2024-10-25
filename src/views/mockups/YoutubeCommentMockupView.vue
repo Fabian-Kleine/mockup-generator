@@ -3,8 +3,8 @@ import { ref } from 'vue';
 import IftaLabel from 'primevue/iftalabel';
 import FileUpload from 'primevue/fileupload';
 import Select from 'primevue/select';
-import EditorLayout from '../../components/EditorLayout.vue';
-import EditorSidebar from '../../components/EditorSidebar.vue';
+import EditorLayout from '../../components/layout/EditorLayout.vue';
+import EditorSidebar from '../../components/layout/EditorSidebar.vue';
 
 const background = ref("dark");
 const proiflePicture = ref("./x_placeholder.png");

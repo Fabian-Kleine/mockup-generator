@@ -1,7 +1,7 @@
 <script setup lang="js">
 import { ref, watch } from 'vue';
 import Drawer from 'primevue/drawer';
-import downloadCapture from '../lib/utils';
+import downloadCapture from '../../lib/utils';
 
 const props = defineProps({
     drawer: Boolean,
