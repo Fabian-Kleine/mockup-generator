@@ -69,10 +69,6 @@ const backgroundOptions = [
                 <ColorPicker inline v-model="gradientColor" inputId="color" />
                 <label for="color">Gradient Color</label>
             </IftaLabel>
-            <div class="flex gap-2 mt-4">
-                <Button as="router-link" class="flex-1" label="Cancel" severity="secondary" to="/" />
-                <Button class="flex-1" label="Download" @click="downloadCapture('spotify-mockup.png')" />
-            </div>
         </EditorSidebar>
         <div :class="['capture-container relative col-span-3 flex justify-center items-center min-h-[800px]', background == 'white' ? 'bg-white' : background == 'green' ? 'bg-[#1db954]' : '']"
             :id="background != 'none' ? 'capture' : ''">
