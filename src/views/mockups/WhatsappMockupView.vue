@@ -8,13 +8,14 @@ import Select from 'primevue/select';
 import EditorLayout from '../../components/layout/EditorLayout.vue';
 import EditorSidebar from '../../components/layout/EditorSidebar.vue';
 import FileInput from '../../components/inputs/FileInput.vue';
+import TimeInput from '../../components/inputs/TimeInput.vue';
 
 const background = ref("green");
 const hidePhone = ref(false);
 const proiflePicture = ref("./x_placeholder.png");
 const messages = ref([]);
 const messageText = ref("");
-const time = ref("Wed Oct 09 2024 21:43:52 GMT+0200 (Mitteleuropäische Sommerzeit)");
+const time = ref("");
 
 const backgroundOptions = [
     {
@@ -67,15 +68,7 @@ function addMessage(action) {
             <p>
                 You can copy emojis from <a class="underline" href="https://getemoji.com/" target="_blank">getemoji.com</a>.
             </p>
-            <IftaLabel>
-                <DatePicker v-model="time" fluid inputId="time" showIcon iconDisplay="input" variant="filled" timeOnly
-                    hourFormat="12">
-                    <template #inputicon="slotProps">
-                        <i class="pi pi-clock" @click="slotProps.clickCallback" />
-                    </template>
-                </DatePicker>
-                <label for="date">Time</label>
-            </IftaLabel>
+            <TimeInput v-model:time="time" />
             <div class="flex gap-2 mt-4">
                 <Button class="flex-1 !bg-[#25D366] !border-[#25D366]" label="Add sent message"
                     @click="addMessage('sent')" />

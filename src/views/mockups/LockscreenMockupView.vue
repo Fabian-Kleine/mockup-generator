@@ -12,6 +12,7 @@ import FileUpload from 'primevue/fileupload';
 import ToggleSwitch from 'primevue/toggleswitch';
 import EditorLayout from '../../components/layout/EditorLayout.vue';
 import EditorSidebar from '../../components/layout/EditorSidebar.vue';
+import TimeInput from '../../components/inputs/TimeInput.vue';
 
 const background = ref("dark");
 const gradientColors = reactive({
@@ -22,7 +23,7 @@ const gradientAngle = ref(45);
 const phoneBg = ref("/phone-backgrounds/iOS-17-light.png");
 const phoneBgBlur = ref(0);
 const date = ref("Wed Oct 09 2024 21:43:52 GMT+0200 (Mitteleuropäische Sommerzeit)");
-const time = ref("Wed Oct 09 2024 21:43:52 GMT+0200 (Mitteleuropäische Sommerzeit)");
+const time = ref("");
 const phoneBgDialog = ref(false);
 const notifications = ref([]);
 const notificationTitle = ref("");
@@ -81,15 +82,7 @@ function onNotifIconSelect(e) {
                     dateFormat="M dd, yy" />
                 <label for="date">Date</label>
             </IftaLabel>
-            <IftaLabel>
-                <DatePicker v-model="time" fluid inputId="time" showIcon iconDisplay="input" variant="filled" timeOnly
-                    hourFormat="24">
-                    <template #inputicon="slotProps">
-                        <i class="pi pi-clock" @click="slotProps.clickCallback" />
-                    </template>
-                </DatePicker>
-                <label for="date">Time</label>
-            </IftaLabel>
+            <TimeInput v-model:time="time" hourFormat="24" />
             <IftaLabel>
                 <Select inputId="background" v-model="background" :options="backgroundOptions" optionLabel="color"
                     optionValue="value" placeholder='Select a Background' class="w-full" />
@@ -187,7 +180,7 @@ function onNotifIconSelect(e) {
                             <h3 class="text-7xl font-bold">{{ new Intl.DateTimeFormat('de-DE', {
                                 hour: "2-digit",
                                 minute: "2-digit"
-                            }).format(new Date(time)) }}</h3>
+                            }).format(time) }}</h3>
                         </div>
                         <div class="flex-1 flex flex-col justify-end items-center z-10">
                             <div class="space-y-2 w-full px-3 mb-4">

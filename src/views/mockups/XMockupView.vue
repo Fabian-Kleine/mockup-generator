@@ -6,11 +6,12 @@ import Select from 'primevue/select';
 import EditorLayout from '../../components/layout/EditorLayout.vue';
 import EditorSidebar from '../../components/layout/EditorSidebar.vue';
 import FileInput from '../../components/inputs/FileInput.vue';
+import TimeInput from '../../components/inputs/TimeInput.vue';
 
 const verified = ref(false);
 const background = ref("blue");
 const date = ref("Wed Oct 09 2024 21:43:52 GMT+0200 (Mitteleuropäische Sommerzeit)");
-const time = ref("Wed Oct 09 2024 21:43:52 GMT+0200 (Mitteleuropäische Sommerzeit)");
+const time = ref("");
 const proiflePicture = ref("./x_placeholder.png");
 
 const backgroundOptions = [
@@ -44,15 +45,7 @@ const backgroundOptions = [
                     dateFormat="M dd, yy" />
                 <label for="date">Date</label>
             </IftaLabel>
-            <IftaLabel>
-                <DatePicker v-model="time" fluid inputId="time" showIcon iconDisplay="input" variant="filled" timeOnly
-                    hourFormat="12">
-                    <template #inputicon="slotProps">
-                        <i class="pi pi-clock" @click="slotProps.clickCallback" />
-                    </template>
-                </DatePicker>
-                <label for="date">Time</label>
-            </IftaLabel>
+            <TimeInput v-model:time="time" />
             <IftaLabel>
                 <Select inputId="background" v-model="background" :options="backgroundOptions" optionLabel="color" optionValue="value"
                     placeholder='Select a Background' class="w-full" />
@@ -90,7 +83,7 @@ const backgroundOptions = [
                 <span class="block font-medium text-gray-500">{{ new Intl.DateTimeFormat('en-US', {
                     hour: "2-digit",
                     minute: "2-digit"
-                }).format(new Date(time)) }} • {{ new Intl.DateTimeFormat('en-US', {
+                }).format(time) }} • {{ new Intl.DateTimeFormat('en-US', {
                         month: 'short',
                         day: '2-digit', year: 'numeric'
                     }).format(new Date(date)) }}</span>
