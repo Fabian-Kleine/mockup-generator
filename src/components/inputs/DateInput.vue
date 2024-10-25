@@ -6,7 +6,7 @@
 
     const emit = defineEmits(['update:date']);
 
-    const date = ref(new Date(2024, 10, 9));
+    const date = ref(new Date(Date.now()));
 
     watch(() => date.value, (newVal) => {
         emit('update:date', newVal);
