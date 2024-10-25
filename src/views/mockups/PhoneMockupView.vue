@@ -4,9 +4,9 @@ import IftaLabel from 'primevue/iftalabel';
 import ColorPicker from 'primevue/colorpicker';
 import Select from 'primevue/select';
 import Slider from 'primevue/slider';
-import FileUpload from 'primevue/fileupload';
 import EditorLayout from '../../components/layout/EditorLayout.vue';
 import EditorSidebar from '../../components/layout/EditorSidebar.vue';
+import FileInput from '../../components/inputs/FileInput.vue';
 
 const background = ref("dark");
 const gradientColors = reactive({
@@ -38,10 +38,6 @@ const backgroundOptions = [
         value: 'none'
     }
 ]
-
-function onPhoneBgSelect(e) {
-    phoneBg.value = e.files[0].objectURL;
-}
 </script>
 
 <template>
@@ -65,12 +61,7 @@ function onPhoneBgSelect(e) {
                 <label v-if="background == 'linear-gradient'" for="gradientAngle">Gradient Rotation: {{ gradientAngle }}deg</label>
                 <Slider v-if="background == 'linear-gradient'" class="mt-4" v-model="gradientAngle" :step="5" :max="360" id="gradientAngle" />
             </div>
-            <div class="space-y-2 mt-4 w-full">
-                <FileUpload :chooseButtonProps="{ class: 'flex-1' }" mode="basic" accept="image/*"
-                    @select="onPhoneBgSelect" chooseLabel="Upload Phone Background" />
-                <Button class="w-full" v-if="phoneBg" label="Remove Phone Background" severity="danger"
-                    @click="phoneBg = ''" />
-            </div>
+            <FileInput v-model:image="phoneBg" imageName="Phone Background" />
         </EditorSidebar>
         <div :style="background == 'linear-gradient' ? { 'background-image': `linear-gradient(${gradientAngle}deg, #${gradientColors.color1}, #${gradientColors.color2})` } 
         : background == 'radial-gradient' ? {'background-image': `radial-gradient(#${gradientColors.color1} 25%, #${gradientColors.color2})`} : {}"

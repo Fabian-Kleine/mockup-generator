@@ -1,24 +1,15 @@
 <script setup lang="js">
-import Drawer from 'primevue/drawer';
 import { ref } from 'vue';
-import FileUpload from 'primevue/fileupload';
 import ToggleSwitch from 'primevue/toggleswitch';
 import { RouterLink } from 'vue-router';
 import EditorSidebar from '../../components/layout/EditorSidebar.vue';
+import FileInput from '../../components/inputs/FileInput.vue';
 
 const editDialogVisible = ref(true);
 const proiflePicture = ref("./x_placeholder.png");
 const thumbnail = ref("");
 const twitchLogo = ref(true);
 const hideNavbar = ref(false);
-
-function onSelect(e) {
-    proiflePicture.value = e.files[0].objectURL;
-}
-
-function onThumbnailSelect(e) {
-    thumbnail.value = e.files[0].objectURL;
-}
 </script>
 
 <template>
@@ -226,18 +217,8 @@ function onThumbnailSelect(e) {
             mockup.
         </p>
         <div class="flex flex-col gap-2">
-            <div class="flex justify-center gap-2 mt-4">
-                <FileUpload class="flex-1" mode="basic" accept="image/*" @select="onSelect"
-                    chooseLabel="Upload Profile Picture" />
-                <Button class="flex-1" v-if="proiflePicture != './x_placeholder.png'" label="Remove Profile Picture"
-                    severity="danger" @click="proiflePicture = './x_placeholder.png'" />
-            </div>
-            <div class="flex justify-center gap-2 mt-4">
-                <FileUpload :chooseButtonProps="{ class: 'flex-1' }" mode="basic" accept="image/*"
-                    @select="onThumbnailSelect" chooseLabel="Upload Stream Thumbnail" />
-                <Button class="flex-1" v-if="thumbnail" label="Remove Thumbnail" severity="danger"
-                    @click="thumbnail = ''" />
-            </div>
+            <FileInput v-model:image="proiflePicture" imageName="Profile Picture" defaultImage="./x_placeholder.png" align="horizontal" />
+            <FileInput v-model:image="thumbnail" imageName="Stream Thumbnail" align="horizontal" />
             <div class="flex items-center mt-4">
                 <ToggleSwitch v-model="twitchLogo" inputId="twitchLogo" />
                 <label for="twitchLogo" class="ml-2"> Show Twitch Logo </label>

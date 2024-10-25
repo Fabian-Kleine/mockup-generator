@@ -1,10 +1,10 @@
 <script lang="js" setup>
 import { ref } from 'vue';
 import IftaLabel from 'primevue/iftalabel';
-import FileUpload from 'primevue/fileupload';
 import Select from 'primevue/select';
 import EditorLayout from '../../components/layout/EditorLayout.vue';
 import EditorSidebar from '../../components/layout/EditorSidebar.vue';
+import FileInput from '../../components/inputs/FileInput.vue';
 
 const background = ref("dark");
 const proiflePicture = ref("./x_placeholder.png");
@@ -23,10 +23,6 @@ const backgroundOptions = [
         value: 'none'
     }
 ]
-
-function onSelect(e) {
-    proiflePicture.value = e.files[0].objectURL;
-}
 </script>
 
 <template>
@@ -40,12 +36,7 @@ function onSelect(e) {
                     optionValue="value" placeholder='Select a Background' class="w-full" />
                 <label for="background">Background</label>
             </IftaLabel>
-            <div class="space-y-2 mt-4 w-full">
-                <FileUpload :chooseButtonProps="{ class: 'flex-1' }" mode="basic" accept="image/*" @select="onSelect"
-                    chooseLabel="Upload Profile Picture" />
-                <Button class="w-full" v-if="proiflePicture != './x_placeholder.png'" label="Remove Profile Picture" severity="danger"
-                    @click="proiflePicture = './x_placeholder.png'" />
-            </div>
+            <FileInput v-model:image="proiflePicture" imageName="Profile Picture" defaultImage="./x_placeholder.png" />
         </EditorSidebar>
         <div :class="['capture-container relative col-span-3 flex justify-center items-center min-h-[800px]', background != 'dark' ? 'bg-white' : '']"
             :id="background == 'dark' || background == 'light' ? 'capture' : ''">

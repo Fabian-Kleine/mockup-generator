@@ -3,11 +3,11 @@ import { ref } from 'vue';
 import IftaLabel from 'primevue/iftalabel';
 import InputText from 'primevue/inputtext';
 import ToggleSwitch from 'primevue/toggleswitch';
-import FileUpload from 'primevue/fileupload';
 import Select from 'primevue/select';
 import ColorPicker from 'primevue/colorpicker';
 import EditorLayout from '../../components/layout/EditorLayout.vue';
 import EditorSidebar from '../../components/layout/EditorSidebar.vue';
+import FileInput from '../../components/inputs/FileInput.vue';
 
 const background = ref("dark");
 const hidePhone = ref(false);
@@ -37,15 +37,6 @@ const backgroundOptions = [
         value: 'none'
     }
 ]
-
-function onSelect(e) {
-    proiflePicture.value = e.files[0].objectURL;
-}
-
-function onImageSelect(e) {
-    image.value = e.files[0].objectURL;
-}
-
 </script>
 
 <template>
@@ -72,18 +63,8 @@ function onImageSelect(e) {
                 <ToggleSwitch v-model="hidePhone" inputId="hidePhone" />
                 <label for="hidePhone" class="ml-2"> Hide Phone </label>
             </div>
-            <div class="space-y-2 mt-4 w-full">
-                <FileUpload :chooseButtonProps="{ class: 'flex-1' }" mode="basic" accept="image/*" @select="onSelect"
-                    chooseLabel="Upload Profile Picture" />
-                <Button class="w-full" v-if="proiflePicture != './x_placeholder.png'" label="Remove Profile Picture"
-                    severity="danger" @click="proiflePicture = './x_placeholder.png'" />
-            </div>
-            <div class="space-y-2 mt-4 w-full">
-                <FileUpload :chooseButtonProps="{ class: 'flex-1' }" mode="basic" accept="image/*"
-                    @select="onImageSelect" chooseLabel="Upload Image" />
-                <Button class="w-full" v-if="image != './spotify_default_cover.png'" label="Remove Image"
-                    severity="danger" @click="image = './spotify_default_cover.png'" />
-            </div>
+            <FileInput v-model:image="proiflePicture" imageName="Profile Picture" defaultImage="./x_placeholder.png" />
+            <FileInput v-model:image="image" imageName="Cover Image" defaultImage="./spotify_default_cover.png" />
             <IftaLabel>
                 <ColorPicker inline v-model="gradientColor" inputId="color" />
                 <label for="color">Gradient Color</label>

@@ -7,6 +7,7 @@ import FileUpload from 'primevue/fileupload';
 import Select from 'primevue/select';
 import EditorLayout from '../../components/layout/EditorLayout.vue';
 import EditorSidebar from '../../components/layout/EditorSidebar.vue';
+import FileInput from '../../components/inputs/FileInput.vue';
 
 const background = ref("dark");
 const hidePhone = ref(false);
@@ -45,8 +46,7 @@ function onImageSelect(e) {
 
 <template>
     <EditorLayout>
-        <EditorSidebar>
-            <h2 class="text-xl font-bold">Edit TikTok Mockup</h2>
+        <EditorSidebar header="Edit TikTok Mockup" downloadFilename="tiktok-mockup.png">
             <p>
                 Click on the numbers to edit it.
             </p>
@@ -68,21 +68,8 @@ function onImageSelect(e) {
                 <ToggleSwitch v-model="hidePhone" inputId="hidePhone" />
                 <label for="hidePhone" class="ml-2"> Hide Phone </label>
             </div>
-            <div class="space-y-2 mt-4 w-full">
-                <FileUpload :chooseButtonProps="{ class: 'flex-1' }" mode="basic" accept="image/*" @select="onSelect"
-                    chooseLabel="Upload Profile Picture" />
-                <Button class="w-full" v-if="proiflePicture != './x_placeholder.png'" label="Remove Profile Picture"
-                    severity="danger" @click="proiflePicture = './x_placeholder.png'" />
-            </div>
-            <div class="space-y-2 mt-4 w-full">
-                <FileUpload :chooseButtonProps="{ class: 'flex-1' }" mode="basic" accept="image/*"
-                    @select="onImageSelect" chooseLabel="Upload Image" />
-                <Button class="w-full" v-if="image" label="Remove Image" severity="danger" @click="image = ''" />
-            </div>
-            <div class="flex gap-2 mt-4">
-                <Button as="router-link" class="flex-1" label="Cancel" severity="secondary" to="/" />
-                <Button class="flex-1" label="Download" @click="downloadCapture('tiktok-mockup.png')" />
-            </div>
+            <FileInput v-model:image="proiflePicture" imageName="Profile Picture" defaultImage="./x_placeholder.png" />
+            <FileInput v-model:image="image" imageName="Cover Image" />
         </EditorSidebar>
         <div :class="['capture-container relative col-span-3 flex justify-center items-center min-h-[800px]', background == 'white' ? 'bg-white' : background == 'gradient' ? 'bg-tiktok-gradient' : '']"
             :id="background != 'none' ? 'capture' : ''">
