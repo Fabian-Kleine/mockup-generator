@@ -49,7 +49,7 @@ function onImageSelect(e) {
                 <label for="background">Background</label>
             </IftaLabel>
             <div
-                :class="['overflow-hidden space-x-2 transition-all box-content', background == 'linear-gradient' || background == 'radial-gradient' ? 'max-h-56 pb-4' : 'max-h-0']">
+                :class="['overflow-hidden space-x-2 transition-all duration-500 ease-linear box-content', background == 'linear-gradient' || background == 'radial-gradient' ? 'max-h-[500px] pb-4' : 'max-h-0']">
                 <IftaLabel class="!inline-block">
                     <ColorPicker inline v-model="gradientColors.color1" inputId="color1" />
                     <label for="color1">Color 1</label>
