@@ -4,8 +4,8 @@ import DatePicker from 'primevue/datepicker';
 import IftaLabel from 'primevue/iftalabel';
 import FileUpload from 'primevue/fileupload';
 import Select from 'primevue/select';
-import EditorLayout from '../../components/EditorLayout.vue';
-import EditorSidebar from '../../components/EditorSidebar.vue';
+import EditorLayout from '../../components/layout/EditorLayout.vue';
+import EditorSidebar from '../../components/layout/EditorSidebar.vue';
 
 const verified = ref(false);
 const background = ref("blue");

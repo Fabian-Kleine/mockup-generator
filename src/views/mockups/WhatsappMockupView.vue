@@ -6,8 +6,8 @@ import InputText from 'primevue/inputtext';
 import DatePicker from 'primevue/datepicker';
 import FileUpload from 'primevue/fileupload';
 import Select from 'primevue/select';
-import EditorLayout from '../../components/EditorLayout.vue';
-import EditorSidebar from '../../components/EditorSidebar.vue';
+import EditorLayout from '../../components/layout/EditorLayout.vue';
+import EditorSidebar from '../../components/layout/EditorSidebar.vue';
 
 const background = ref("green");
 const hidePhone = ref(false);
