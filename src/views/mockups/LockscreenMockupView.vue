@@ -5,7 +5,6 @@ import IftaLabel from 'primevue/iftalabel';
 import InputText from 'primevue/inputtext';
 import ColorPicker from 'primevue/colorpicker';
 import Dialog from 'primevue/dialog';
-import DatePicker from 'primevue/datepicker';
 import Select from 'primevue/select';
 import Slider from 'primevue/slider';
 import FileUpload from 'primevue/fileupload';
@@ -13,6 +12,7 @@ import ToggleSwitch from 'primevue/toggleswitch';
 import EditorLayout from '../../components/layout/EditorLayout.vue';
 import EditorSidebar from '../../components/layout/EditorSidebar.vue';
 import TimeInput from '../../components/inputs/TimeInput.vue';
+import DateInput from '../../components/inputs/DateInput.vue';
 
 const background = ref("dark");
 const gradientColors = reactive({
@@ -22,7 +22,7 @@ const gradientColors = reactive({
 const gradientAngle = ref(45);
 const phoneBg = ref("/phone-backgrounds/iOS-17-light.png");
 const phoneBgBlur = ref(0);
-const date = ref("Wed Oct 09 2024 21:43:52 GMT+0200 (Mitteleuropäische Sommerzeit)");
+const date = ref("");
 const time = ref("");
 const phoneBgDialog = ref(false);
 const notifications = ref([]);
@@ -77,11 +77,7 @@ function onNotifIconSelect(e) {
 <template>
     <EditorLayout>
         <EditorSidebar header="Edit Phone Lockscreen Mockup" downloadFilename="lockscreen-mockup.png">
-            <IftaLabel>
-                <DatePicker v-model="date" fluid inputId="date" showIcon iconDisplay="input" variant="filled"
-                    dateFormat="M dd, yy" />
-                <label for="date">Date</label>
-            </IftaLabel>
+            <DateInput v-model:date="date" />
             <TimeInput v-model:time="time" hourFormat="24" />
             <IftaLabel>
                 <Select inputId="background" v-model="background" :options="backgroundOptions" optionLabel="color"
@@ -176,7 +172,7 @@ function onNotifIconSelect(e) {
                                 weekday: 'long',
                                 month: 'long',
                                 day: 'numeric'
-                            }).format(new Date(date)) }}</h4>
+                            }).format(date) }}</h4>
                             <h3 class="text-7xl font-bold">{{ new Intl.DateTimeFormat('de-DE', {
                                 hour: "2-digit",
                                 minute: "2-digit"

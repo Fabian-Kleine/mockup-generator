@@ -1,16 +1,16 @@
 <script lang="js" setup>
 import { ref } from 'vue';
-import DatePicker from 'primevue/datepicker';
 import IftaLabel from 'primevue/iftalabel';
 import Select from 'primevue/select';
 import EditorLayout from '../../components/layout/EditorLayout.vue';
 import EditorSidebar from '../../components/layout/EditorSidebar.vue';
 import FileInput from '../../components/inputs/FileInput.vue';
 import TimeInput from '../../components/inputs/TimeInput.vue';
+import DateInput from '../../components/inputs/DateInput.vue';
 
 const verified = ref(false);
 const background = ref("blue");
-const date = ref("Wed Oct 09 2024 21:43:52 GMT+0200 (Mitteleuropäische Sommerzeit)");
+const date = ref("");
 const time = ref("");
 const proiflePicture = ref("./x_placeholder.png");
 
@@ -40,11 +40,7 @@ const backgroundOptions = [
                 <Checkbox v-model="verified" binary inputId="verified" name="verified" value="Verified" />
                 <label for="verified" class="ml-2"> Verified </label>
             </div>
-            <IftaLabel>
-                <DatePicker v-model="date" fluid inputId="date" showIcon iconDisplay="input" variant="filled"
-                    dateFormat="M dd, yy" />
-                <label for="date">Date</label>
-            </IftaLabel>
+            <DateInput v-model:date="date" />
             <TimeInput v-model:time="time" />
             <IftaLabel>
                 <Select inputId="background" v-model="background" :options="backgroundOptions" optionLabel="color" optionValue="value"
@@ -86,7 +82,7 @@ const backgroundOptions = [
                 }).format(time) }} • {{ new Intl.DateTimeFormat('en-US', {
                         month: 'short',
                         day: '2-digit', year: 'numeric'
-                    }).format(new Date(date)) }}</span>
+                    }).format(date) }}</span>
                 <div class="w-full flex justify-between border-t border-t-gray-100 pt-4 mt-4 px-2">
                     <div class="flex justify-center items-center gap-1 text-gray-500">
                         <i class="pi pi-comment"></i>

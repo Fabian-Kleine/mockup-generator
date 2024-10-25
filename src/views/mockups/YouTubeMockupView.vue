@@ -1,11 +1,10 @@
 <script setup lang="js">
 import { ref } from 'vue';
 import ToggleSwitch from 'primevue/toggleswitch';
-import IftaLabel from 'primevue/iftalabel';
-import DatePicker from 'primevue/datepicker';
 import { RouterLink } from 'vue-router';
 import EditorSidebar from '../../components/layout/EditorSidebar.vue';
 import FileInput from '../../components/inputs/FileInput.vue';
+import DateInput from '../../components/inputs/DateInput.vue';
 
 const recommendedVideosLength = Array.from({ length: 8 });
 const editDialogVisible = ref(true);
@@ -15,7 +14,7 @@ const redSubscribeButton = ref(false);
 const youtubeLogo = ref(true);
 const hideNavbar = ref(false);
 const description = ref(false);
-const date = ref("Wed Oct 09 2024 21:43:52 GMT+0200 (Mitteleuropäische Sommerzeit)")
+const date = ref("")
 </script>
 
 <template>
@@ -136,7 +135,7 @@ const date = ref("Wed Oct 09 2024 21:43:52 GMT+0200 (Mitteleuropäische Sommerze
                 </div>
             </div>
             <div class="space-y-4">
-                <div class="flex gap-2" v-for="recommended in recommendedVideosLength">
+                <div class="flex gap-2" v-for="_ in recommendedVideosLength">
                     <div class="bg-neutral-700 h-24 aspect-video rounded-md"></div>
                     <div class="flex-1">
                         <div class="bg-neutral-700 w-full h-4 rounded-xl mb-2"></div>
@@ -186,11 +185,7 @@ const date = ref("Wed Oct 09 2024 21:43:52 GMT+0200 (Mitteleuropäische Sommerze
                 <label for="description" class="ml-2"> Show Description </label>
             </div>
             <div :class="['overflow-hidden transition-all', description ? 'max-h-24' : 'max-h-0']">
-                <IftaLabel class="mt-4">
-                    <DatePicker v-model="date" fluid inputId="date" showIcon iconDisplay="input" variant="filled"
-                        dateFormat="dd.mm.yy" />
-                    <label for="date">Upload Date</label>
-                </IftaLabel>
+                <DateInput v-model:date="date" />
             </div>
         </div>
     </EditorSidebar>
