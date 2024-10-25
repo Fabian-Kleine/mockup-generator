@@ -7,6 +7,14 @@ const props = defineProps({
     imageName: {
         type: String,
         default: 'Image'
+    },
+    defaultImage: {
+        type: String,
+        default: ''
+    },
+    align: {
+        type: String,
+        default: 'vertical'
     }
 });
 
@@ -24,15 +32,15 @@ function onImageSelect(e) {
 }
 
 function removeImage() {
-    localImage.value = '';
-    emit('update:image', '');
+    localImage.value = props.defaultImage;
+    emit('update:image', props.defaultImage);
 }
 </script>
 
 <template>
-    <div class="space-y-2 mt-4 w-full">
-        <FileUpload :chooseButtonProps="{ class: 'flex-1' }" mode="basic" accept="image/*" @select="onImageSelect"
+    <div :class="[props.align == 'horizontal' ? 'flex justify-center gap-2 mt-4' : 'space-y-2 mt-4 w-full']">
+        <FileUpload :class="[props.align == 'vertical' ? 'flex-1' : '']" :chooseButtonProps="{ class: props.align == 'horizontal' ? 'flex-1' : '' }" mode="basic" accept="image/*" @select="onImageSelect"
             :chooseLabel="'Upload ' + props.imageName" />
-        <Button class="w-full" v-if="localImage" :label="'Remove ' + props.imageName" severity="danger" @click="removeImage" />
+        <Button :class="[props.align == 'horizontal' ? 'flex-1' : 'w-full']" v-if="localImage != props.defaultImage" :label="'Remove ' + props.imageName" severity="danger" @click="removeImage" />
     </div>
 </template>
