@@ -26,49 +26,49 @@ import Card from '../components/Card.vue';
     </div>
     <div class="px-6 py-8 md:px-12 lg:px-20 max-w-screen overflow-x-hidden" id="mockups">
         <div class="grid grid-cols-12 gap-4">
-            <Card title="X (Twitter) tweet" image="/x-mockup.png" to="/x">
+            <Card title="X (Twitter) tweet" image="./x-mockup.png" to="/x">
                 <div
                     class="flex items-center justify-center bg-blue-100 dark:bg-blue-500/30 rounded-border min-w-10 w-10 h-10">
                     <i class="pi pi-twitter text-blue-500 dark:text-blue-200 !text-xl" />
                 </div>
             </Card>
-            <Card title="Youtube Video" image="/youtube-mockup.png" to="/youtube">
+            <Card title="Youtube Video" image="./youtube-mockup.png" to="/youtube">
                 <div
                     class="flex items-center justify-center bg-red-100 dark:bg-red-400/30 rounded-border min-w-10 w-10 h-10">
                     <i class="pi pi-youtube text-red-500 dark:text-red-200 !text-xl" />
                 </div>
             </Card>
-            <Card title="Youtube Comment" image="/youtube-comment-mockup.png" to="/youtube-comment">
+            <Card title="Youtube Comment" image="./youtube-comment-mockup.png" to="/youtube-comment">
                 <div
                     class="flex items-center justify-center bg-red-100 dark:bg-red-400/30 rounded-border min-w-10 w-10 h-10">
                     <i class="pi pi-youtube text-red-500 dark:text-red-200 !text-xl" />
                 </div>
             </Card>
-            <Card title="Twitch Stream" image="/twitch-mockup.png" to="/twitch">
+            <Card title="Twitch Stream" image="./twitch-mockup.png" to="/twitch">
                 <div
                     class="flex items-center justify-center bg-purple-100 dark:bg-purple-400/30 rounded-border min-w-10 w-10 h-10">
                     <i class="pi pi-twitch text-purple-500 dark:text-purple-200 !text-xl" />
                 </div>
             </Card>
-            <Card title="Whatsapp Chat" image="/whatsapp-mockup.png" to="/whatsapp">
+            <Card title="Whatsapp Chat" image="./whatsapp-mockup.png" to="/whatsapp">
                 <div
                     class="w-10 h-10 min-w-10 flex items-center justify-center bg-green-100 dark:bg-green-400/30 rounded-border">
                     <i class="pi pi-whatsapp text-green-500 dark:text-green-200 !text-xl" />
                 </div>
             </Card>
-            <Card title="Instagram Post" image="/instagram-mockup.png" to="/instagram">
+            <Card title="Instagram Post" image="./instagram-mockup.png" to="/instagram">
                 <div
                     class="w-10 h-10 min-w-10 flex items-center justify-center bg-fuchsia-100 dark:bg-fuchsia-400/30 rounded-border">
                     <i class="pi pi-instagram text-fuchsia-500 dark:text-fuchsia-200 !text-xl" />
                 </div>
             </Card>
-            <Card title="Tiktok" image="/tiktok-mockup.png" to="/tiktok">
+            <Card title="Tiktok" image="./tiktok-mockup.png" to="/tiktok">
                 <div
                     class="w-10 h-10 min-w-10 flex items-center justify-center bg-pink-100 dark:bg-pink-400/30 rounded-border">
                     <i class="pi pi-tiktok text-pink-500 dark:text-pink-200 !text-xl" />
                 </div>
             </Card>
-            <Card title="Spotfy Playlist Phone" image="/spotify-mockup.png" to="/spotify">
+            <Card title="Spotfy Playlist Phone" image="./spotify-mockup.png" to="/spotify">
                 <div class="w-10 h-10 min-w-10 flex items-center justify-center bg-[#1db954] rounded-border">
                     <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
                         clip-rule="evenodd">
@@ -77,7 +77,7 @@ import Card from '../components/Card.vue';
                     </svg>
                 </div>
             </Card>
-            <Card title="Spotify Playlist Desktop" image="/spotify-desktop-mockup.png" to="/spotify-desktop">
+            <Card title="Spotify Playlist Desktop" image="./spotify-desktop-mockup.png" to="/spotify-desktop">
                 <div class="w-10 h-10 min-w-10 flex items-center justify-center bg-[#1db954] rounded-border">
                     <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
                         clip-rule="evenodd">
@@ -86,49 +86,49 @@ import Card from '../components/Card.vue';
                     </svg>
                 </div>
             </Card>
-            <Card title="Phone Mockup" image="/phone-mockup.png" to="/phone">
+            <Card title="Phone Mockup" image="./phone-mockup.png" to="/phone">
                 <div
                     class="w-10 h-10 min-w-10 flex items-center justify-center bg-amber-100 dark:bg-amber-400/30 rounded-border">
                     <i class="pi pi-mobile text-amber-500 dark:text-amber-200 !text-xl" />
                 </div>
             </Card>
-            <Card title="Phone Lockscreen Mockup" image="/lockscreen-mockup.png" to="/lockscreen">
+            <Card title="Phone Lockscreen Mockup" image="./lockscreen-mockup.png" to="/lockscreen">
                 <div
                     class="w-10 h-10 min-w-10 flex items-center justify-center bg-amber-100 dark:bg-amber-400/30 rounded-border">
                     <i class="pi pi-mobile text-amber-500 dark:text-amber-200 !text-xl" />
                 </div>
             </Card>
-            <Card title="Phone Call Mockup" image="/call-mockup.png" to="/call">
+            <Card title="Phone Call Mockup" image="./call-mockup.png" to="/call">
                 <div
                     class="w-10 h-10 min-w-10 flex items-center justify-center bg-amber-100 dark:bg-amber-400/30 rounded-border">
                     <i class="pi pi-mobile text-amber-500 dark:text-amber-200 !text-xl" />
                 </div>
             </Card>
-            <Card title="Image Mockup" image="/image-mockup.png" to="/image">
+            <Card title="Image Mockup" image="./image-mockup.png" to="/image">
                 <div
                     class="w-10 h-10 min-w-10 flex items-center justify-center bg-pink-100 dark:bg-pink-400/30 rounded-border">
                     <i class="pi pi-image text-pink-500 dark:text-pink-200 !text-xl" />
                 </div>
             </Card>
-            <Card title="Browser Mockup" image="/browser-mockup.png" to="/browser">
+            <Card title="Browser Mockup" image="./browser-mockup.png" to="/browser">
                 <div
                     class="w-10 h-10 min-w-10 flex items-center justify-center bg-pink-100 dark:bg-pink-400/30 rounded-border">
                     <i class="pi pi-globe text-pink-500 dark:text-pink-200 !text-xl" />
                 </div>
             </Card>
-            <Card title="Window Mockup" image="/window-mockup.png" to="/window">
+            <Card title="Window Mockup" image="./window-mockup.png" to="/window">
                 <div
                     class="w-10 h-10 min-w-10 flex items-center justify-center bg-pink-100 dark:bg-pink-400/30 rounded-border">
                     <i class="pi pi-window-maximize text-pink-500 dark:text-pink-200 !text-xl" />
                 </div>
             </Card>
-            <Card title="Desktop Mockup" image="/desktop-mockup.png" to="/desktop">
+            <Card title="Desktop Mockup" image="./desktop-mockup.png" to="/desktop">
                 <div
                     class="w-10 h-10 min-w-10 flex items-center justify-center bg-indigo-100 dark:bg-indigo-400/30 rounded-border">
                     <i class="pi pi-desktop text-indigo-500 dark:text-indigo-200 !text-xl" />
                 </div>
             </Card>
-            <Card title="Laptop Mockup" image="/laptop-mockup.png" to="/laptop">
+            <Card title="Laptop Mockup" image="./laptop-mockup.png" to="/laptop">
                 <div
                     class="w-10 h-10 min-w-10 flex items-center justify-center bg-indigo-100 dark:bg-indigo-400/30 rounded-border">
                     <i class="pi pi-desktop text-indigo-500 dark:text-indigo-200 !text-xl" />
