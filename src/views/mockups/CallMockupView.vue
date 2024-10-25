@@ -5,9 +5,9 @@ import InputText from 'primevue/inputtext';
 import ColorPicker from 'primevue/colorpicker';
 import Select from 'primevue/select';
 import Slider from 'primevue/slider';
-import FileUpload from 'primevue/fileupload';
 import EditorLayout from '../../components/layout/EditorLayout.vue';
 import EditorSidebar from '../../components/layout/EditorSidebar.vue';
+import FileInput from '../../components/inputs/FileInput.vue';
 
 const background = ref("dark");
 const gradientColors = reactive({
@@ -42,14 +42,6 @@ const backgroundOptions = [
         value: 'none'
     }
 ]
-
-function onSelect(e) {
-    proiflePicture.value = e.files[0].objectURL;
-}
-
-function onPhoneBgSelect(e) {
-    phoneBg.value = e.files[0].objectURL;
-}
 </script>
 
 <template>
@@ -83,18 +75,8 @@ function onPhoneBgSelect(e) {
                 <InputText fluid id="phoneNumber" v-model="phoneNumber" variant="filled" placeholder="012-3456-7890" />
                 <label for="phoneNumber">Phone Number</label>
             </IftaLabel>
-            <div class="space-y-2 mt-4 w-full">
-                <FileUpload :chooseButtonProps="{ class: 'flex-1' }" mode="basic" accept="image/*" @select="onSelect"
-                    chooseLabel="Upload Profile Picture" />
-                <Button class="w-full" v-if="proiflePicture != './x_placeholder.png'" label="Remove Profile Picture"
-                    severity="danger" @click="proiflePicture = './x_placeholder.png'" />
-            </div>
-            <div class="space-y-2 mt-4 w-full">
-                <FileUpload :chooseButtonProps="{ class: 'flex-1' }" mode="basic" accept="image/*"
-                    @select="onPhoneBgSelect" chooseLabel="Upload Call Background" />
-                <Button class="w-full" v-if="phoneBg" label="Remove Call Background" severity="danger"
-                    @click="phoneBg = ''" />
-            </div>
+            <FileInput v-model:image="proiflePicture" imageName="Profile Picture" defaultImage="./x_placeholder.png" />
+            <FileInput v-model:image="phoneBg" imageName="Call Background" />
         </EditorSidebar>
         <div :style="background == 'linear-gradient' ? { 'background-image': `linear-gradient(${gradientAngle}deg, #${gradientColors.color1}, #${gradientColors.color2})` }
             : background == 'radial-gradient' ? { 'background-image': `radial-gradient(#${gradientColors.color1} 25%, #${gradientColors.color2})` } : {}"

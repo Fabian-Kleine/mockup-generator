@@ -3,10 +3,10 @@ import { ref } from 'vue';
 import IftaLabel from 'primevue/iftalabel';
 import InputText from 'primevue/inputtext';
 import ToggleSwitch from 'primevue/toggleswitch';
-import FileUpload from 'primevue/fileupload';
 import Select from 'primevue/select';
 import EditorLayout from '../../components/layout/EditorLayout.vue';
 import EditorSidebar from '../../components/layout/EditorSidebar.vue';
+import FileInput from '../../components/inputs/FileInput.vue';
 
 const background = ref("gradient");
 const hidePhone = ref(false);
@@ -34,14 +34,6 @@ const backgroundOptions = [
         value: 'none'
     }
 ]
-
-function onSelect(e) {
-    proiflePicture.value = e.files[0].objectURL;
-}
-
-function onImageSelect(e) {
-    image.value = e.files[0].objectURL;
-}
 </script>
 
 <template>
@@ -71,17 +63,8 @@ function onImageSelect(e) {
                 <ToggleSwitch v-model="darkmode" inputId="darkmode" />
                 <label for="darkmode" class="ml-2"> Darkmode </label>
             </div>
-            <div class="space-y-2 mt-4 w-full">
-                <FileUpload :chooseButtonProps="{ class: 'flex-1' }" mode="basic" accept="image/*" @select="onSelect"
-                    chooseLabel="Upload Profile Picture" />
-                <Button class="w-full" v-if="proiflePicture != './x_placeholder.png'" label="Remove Profile Picture" severity="danger"
-                    @click="proiflePicture = './x_placeholder.png'" />
-            </div>
-            <div class="space-y-2 mt-4 w-full">
-                <FileUpload :chooseButtonProps="{ class: 'flex-1' }" mode="basic" accept="image/*"
-                    @select="onImageSelect" chooseLabel="Upload Post Image" />
-                <Button class="w-full" v-if="image" label="Remove Post Image" severity="danger" @click="image = ''" />
-            </div>
+            <FileInput v-model:image="proiflePicture" imageName="Profile Picture" defaultImage="./x_placeholder.png" />
+            <FileInput v-model:image="image" imageName="Post Image" />
         </EditorSidebar>
         <div :class="['capture-container relative col-span-3 flex justify-center items-center min-h-[800px]', background == 'white' ? 'bg-white' : background == 'gradient' ? 'bg-instagram-gradient' : '']"
             :id="background != 'none' ? 'capture' : ''">

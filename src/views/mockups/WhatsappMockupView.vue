@@ -4,10 +4,10 @@ import IftaLabel from 'primevue/iftalabel';
 import ToggleSwitch from 'primevue/toggleswitch';
 import InputText from 'primevue/inputtext';
 import DatePicker from 'primevue/datepicker';
-import FileUpload from 'primevue/fileupload';
 import Select from 'primevue/select';
 import EditorLayout from '../../components/layout/EditorLayout.vue';
 import EditorSidebar from '../../components/layout/EditorSidebar.vue';
+import FileInput from '../../components/inputs/FileInput.vue';
 
 const background = ref("green");
 const hidePhone = ref(false);
@@ -30,10 +30,6 @@ const backgroundOptions = [
         value: 'none'
     }
 ]
-
-function onSelect(e) {
-    proiflePicture.value = e.files[0].objectURL;
-}
 
 function addMessage(action) {
     let newMessage = {
@@ -61,12 +57,7 @@ function addMessage(action) {
                 <ToggleSwitch v-model="hidePhone" inputId="hidePhone" />
                 <label for="hidePhone" class="ml-2"> Hide Phone </label>
             </div>
-            <div class="space-y-2 mt-4 w-full">
-                <FileUpload :chooseButtonProps="{ class: 'flex-1' }" mode="basic" accept="image/*" @select="onSelect"
-                    chooseLabel="Upload Profile Picture" />
-                <Button class="w-full" v-if="proiflePicture != './x_placeholder.png'" label="Remove Profile Picture" severity="danger"
-                    @click="proiflePicture = './x_placeholder.png'" />
-            </div>
+            <FileInput v-model:image="proiflePicture" imageName="Profile Picture" defaultImage="./x_placeholder.png" />
             <div class="h-[1px] w-full bg-neutral-500"></div>
             <h3 class="mt-2 font-bold text-lg">Add Messages</h3>
             <IftaLabel>

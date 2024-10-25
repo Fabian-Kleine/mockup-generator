@@ -8,6 +8,7 @@ import FileUpload from 'primevue/fileupload';
 import ToggleSwitch from 'primevue/toggleswitch';
 import EditorLayout from '../../components/layout/EditorLayout.vue';
 import EditorSidebar from '../../components/layout/EditorSidebar.vue';
+import FileInput from '../../components/inputs/FileInput.vue';
 
 const background = ref("dark");
 const image = ref("./spotify_default_cover.png");
@@ -64,12 +65,7 @@ function onImageSelect(e) {
                     placeholder="Type Playlist Name..." />
                 <label for="playlistName">Playlist Name</label>
             </IftaLabel>
-            <div class="space-y-2 mt-4 w-full">
-                <FileUpload :chooseButtonProps="{ class: 'flex-1' }" mode="basic" accept="image/*"
-                    @select="onImageSelect" chooseLabel="Upload Image" />
-                <Button class="w-full" v-if="image != './spotify_default_cover.png'" label="Remove Image"
-                    severity="danger" @click="image = './spotify_default_cover.png'" />
-            </div>
+            <FileInput v-model:image="image" imageName="Image" defaultImage="./spotify_default_cover.png" />
             <div class="flex items-center mt-4">
                 <ToggleSwitch v-model="darkmode" inputId="darkmode" />
                 <label for="darkmode" class="ml-2"> Dark Mode </label>

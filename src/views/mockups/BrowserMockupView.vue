@@ -5,10 +5,10 @@ import InputText from 'primevue/inputtext';
 import ColorPicker from 'primevue/colorpicker';
 import Select from 'primevue/select';
 import Slider from 'primevue/slider';
-import FileUpload from 'primevue/fileupload';
 import ToggleSwitch from 'primevue/toggleswitch';
 import EditorLayout from '../../components/layout/EditorLayout.vue';
 import EditorSidebar from '../../components/layout/EditorSidebar.vue';
+import FileInput from '../../components/inputs/FileInput.vue';
 
 const background = ref("dark");
 const gradientColors = reactive({
@@ -46,10 +46,6 @@ const backgroundOptions = [
         value: 'none'
     }
 ]
-
-function onImageSelect(e) {
-    image.value = e.files[0].objectURL;
-}
 </script>
 
 <template>
@@ -80,11 +76,7 @@ function onImageSelect(e) {
                 <Slider v-if="background == 'linear-gradient'" class="mt-4" v-model="gradientAngle" :step="5" :max="360"
                     id="gradientAngle" />
             </div>
-            <div class="space-y-2 mt-4 w-full">
-                <FileUpload :chooseButtonProps="{ class: 'flex-1' }" mode="basic" accept="image/*"
-                    @select="onImageSelect" chooseLabel="Upload Image" />
-                <Button class="w-full" v-if="image" label="Remove Image" severity="danger" @click="image = ''" />
-            </div>
+            <FileInput v-model:image="image" imageName="Image" />
             <div class="flex items-center mt-4">
                 <ToggleSwitch v-model="darkmode" inputId="darkmode" />
                 <label for="darkmode" class="ml-2"> Dark Mode </label>
