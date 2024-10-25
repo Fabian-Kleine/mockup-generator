@@ -70,9 +70,9 @@ function addMessage(action) {
             </p>
             <TimeInput v-model:time="time" />
             <div class="flex gap-2 mt-4">
-                <Button class="flex-1 !bg-[#25D366] !border-[#25D366]" label="Add sent message"
+                <Button class="flex-1 !bg-[#25D366] !border-[#25D366]" :disabled="!messageText" label="Add sent message"
                     @click="addMessage('sent')" />
-                <Button class="flex-1 !bg-white !border-white" label="Add recieved message"
+                <Button class="flex-1 !bg-white !border-white" :disabled="!messageText" label="Add recieved message"
                     @click="addMessage('recieved')" />
             </div>
             <Button v-if="messages.length" severity="danger" label="Remove all messages" @click="messages=[]" />
@@ -120,7 +120,7 @@ function addMessage(action) {
                                     Intl.DateTimeFormat('en-US', {
                                         hour: "2-digit",
                                         minute: "2-digit"
-                                    }).format(new Date(message.time)) }}</p>
+                                    }).format(message.time) }}</p>
                             </div>
                             <div class="mr-auto w-full rounded-lg rounded-tl-none my-1 p-2 text-sm bg-white flex flex-col relative speech-bubble-left"
                                 v-if="message.action == 'recieved'">
@@ -129,7 +129,7 @@ function addMessage(action) {
                                     Intl.DateTimeFormat('en-US', {
                                         hour: "2-digit",
                                         minute: "2-digit"
-                                    }).format(new Date(message.time)) }}</p>
+                                    }).format(message.time) }}</p>
                             </div>
                         </template>
                     </div>

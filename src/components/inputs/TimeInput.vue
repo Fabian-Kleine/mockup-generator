@@ -15,6 +15,7 @@
 
     const time = ref(new Date());
     time.value.setHours(11, 43, 0);
+    emit('update:time', time.value);
 
     watch(() => time.value, (newVal) => {
         emit('update:time', newVal);
