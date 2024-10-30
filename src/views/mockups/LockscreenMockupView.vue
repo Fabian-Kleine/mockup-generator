@@ -20,7 +20,7 @@ const gradientColors = reactive({
     color2: 'ff2323'
 });
 const gradientAngle = ref(45);
-const phoneBg = ref("/phone-backgrounds/iOS-17-light.png");
+const phoneBg = ref("./phone-backgrounds/iOS-17-light.png");
 const phoneBgBlur = ref(0);
 const date = ref("");
 const time = ref("");
@@ -232,7 +232,7 @@ function onNotifIconSelect(e) {
                 <template #title>iOS 17 light</template>
                 <template #footer>
                     <Button label="Select Background" class="w-full"
-                        @click="phoneBg = '/phone-backgrounds/iOS-17-light.png'; phoneBgDialog = false" />
+                        @click="phoneBg = './phone-backgrounds/iOS-17-light.png'; phoneBgDialog = false" />
                 </template>
             </Card>
             <Card class="w-1/4 p-2">
@@ -244,7 +244,7 @@ function onNotifIconSelect(e) {
                 <template #title>iOS 15 dark</template>
                 <template #footer>
                     <Button label="Select Background" class="w-full"
-                        @click="phoneBg = '/phone-backgrounds/iOS-15-dark.png'; phoneBgDialog = false" />
+                        @click="phoneBg = './phone-backgrounds/iOS-15-dark.png'; phoneBgDialog = false" />
                 </template>
             </Card>
             <Card class="w-1/4 p-2">
@@ -255,7 +255,7 @@ function onNotifIconSelect(e) {
                 <template #title>iOS 7</template>
                 <template #footer>
                     <Button label="Select Background" class="w-full"
-                        @click="phoneBg = '/phone-backgrounds/iOS-7.jpg'; phoneBgDialog = false" />
+                        @click="phoneBg = './phone-backgrounds/iOS-7.jpg'; phoneBgDialog = false" />
                 </template>
             </Card>
             <Card class="w-1/4 p-2">
@@ -267,7 +267,7 @@ function onNotifIconSelect(e) {
                 <template #title>iPhone 14</template>
                 <template #footer>
                     <Button label="Select Background" class="w-full"
-                        @click="phoneBg = '/phone-backgrounds/iPhone-14.jpg'; phoneBgDialog = false" />
+                        @click="phoneBg = './phone-backgrounds/iPhone-14.jpg'; phoneBgDialog = false" />
                 </template>
             </Card>
             <Card class="w-1/4 p-2">
@@ -279,7 +279,7 @@ function onNotifIconSelect(e) {
                 <template #title>iPhone 12 Pro Gray</template>
                 <template #footer>
                     <Button label="Select Background" class="w-full"
-                        @click="phoneBg = '/phone-backgrounds/iPhone-12-pro-gray.png'; phoneBgDialog = false" />
+                        @click="phoneBg = './phone-backgrounds/iPhone-12-pro-gray.png'; phoneBgDialog = false" />
                 </template>
             </Card>
             <Card class="w-1/4 p-2">
@@ -291,7 +291,7 @@ function onNotifIconSelect(e) {
                 <template #title>iPhone 12 Pro Blue</template>
                 <template #footer>
                     <Button label="Select Background" class="w-full"
-                        @click="phoneBg = '/phone-backgrounds/iPhone-12-pro-blue.png'; phoneBgDialog = false" />
+                        @click="phoneBg = './phone-backgrounds/iPhone-12-pro-blue.png'; phoneBgDialog = false" />
                 </template>
             </Card>
         </div>
@@ -306,7 +306,7 @@ function onNotifIconSelect(e) {
                 <template #title>Z Flip 6 Green</template>
                 <template #footer>
                     <Button label="Select Background" class="w-full"
-                        @click="phoneBg = '/phone-backgrounds/samsung-z-flip-6-green.png'; phoneBgDialog = false" />
+                        @click="phoneBg = './phone-backgrounds/samsung-z-flip-6-green.png'; phoneBgDialog = false" />
                 </template>
             </Card>
             <Card class="w-1/4 p-2">
@@ -318,7 +318,7 @@ function onNotifIconSelect(e) {
                 <template #title>Z Flip 6 Blue</template>
                 <template #footer>
                     <Button label="Select Background" class="w-full"
-                        @click="phoneBg = '/phone-backgrounds/samsung-z-flip-6-blue.png'; phoneBgDialog = false" />
+                        @click="phoneBg = './phone-backgrounds/samsung-z-flip-6-blue.png'; phoneBgDialog = false" />
                 </template>
             </Card>
             <Card class="w-1/4 p-2">
@@ -330,7 +330,7 @@ function onNotifIconSelect(e) {
                 <template #title>Z Flip 6 Purple</template>
                 <template #footer>
                     <Button label="Select Background" class="w-full"
-                        @click="phoneBg = '/phone-backgrounds/samsung-z-flip-6-purple.jpg'; phoneBgDialog = false" />
+                        @click="phoneBg = './phone-backgrounds/samsung-z-flip-6-purple.jpg'; phoneBgDialog = false" />
                 </template>
             </Card>
             <Card class="w-1/4 p-2">
@@ -342,7 +342,7 @@ function onNotifIconSelect(e) {
                 <template #title>Z Flip 6 Gray</template>
                 <template #footer>
                     <Button label="Select Background" class="w-full"
-                        @click="phoneBg = '/phone-backgrounds/samsung-z-flip-6-gray.jpg'; phoneBgDialog = false" />
+                        @click="phoneBg = './phone-backgrounds/samsung-z-flip-6-gray.jpg'; phoneBgDialog = false" />
                 </template>
             </Card>
             <Card class="w-1/4 p-2">
@@ -354,7 +354,7 @@ function onNotifIconSelect(e) {
                 <template #title>A54</template>
                 <template #footer>
                     <Button label="Select Background" class="w-full"
-                        @click="phoneBg = '/phone-backgrounds/Samsung-Galaxy-A54.png'; phoneBgDialog = false" />
+                        @click="phoneBg = './phone-backgrounds/Samsung-Galaxy-A54.png'; phoneBgDialog = false" />
                 </template>
             </Card>
         </div>
