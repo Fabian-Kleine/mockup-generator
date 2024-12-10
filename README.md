@@ -24,7 +24,7 @@ The Mockup Generator is a web application that allows you to create mockups for 
 ## Local Installation
 
 ```bash
-git clone git@gitlab.rhiem-intermedia.de:fabian.kleine/mockup-generator.git 
+git clone git@github.com:Fabian-Kleine/mockup-generator.git 
 
 cd mockup-generator
 ```
@@ -43,7 +43,7 @@ After running the build command you can host the created files from the `dist` f
 ## NixOS Installation
 
 ```bash
-git clone git@gitlab.rhiem-intermedia.de:fabian.kleine/mockup-generator.git 
+git clone git@github.com:Fabian-Kleine/mockup-generator.git
 
 cd mockup-generator
 
